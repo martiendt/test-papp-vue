@@ -21,6 +21,26 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Dev Tools
+- [Vite](https://vitejs.dev/) Next Generation Frontend Tooling
+- [TypeScript](https://www.typescriptlang.org/) is a strongly typed programming language that builds on JavaScript
+- [Cypress](https://cypress.io/) E2E Testing
+- [ESLint](https://eslint.org/) Code Linting
+- [Prettier](https://prettier.io/) Code Formatting
+
+## UI Frameworks
+
+- [Tailwind CSS v3](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML
+
+## Prerequisites
+
+1. [Node.js](https://nodejs.org/) v16.x or higher
+2. [pnpm](https://pnpm.io/) creates a non-flat node_modules by default, so code has no access to arbitrary packages
+
+```sh
+npm install -g pnpm
+```
+
 ## Project Setup
 
 ```sh
