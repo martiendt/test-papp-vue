@@ -57,3 +57,7 @@ pnpm test:e2e # or `pnpm test:e2e:ci` for headless testing
 ```sh
 pnpm lint
 ```
+
+## Deploy on Netlify
+
+Go to [Netlify](https://app.netlify.com/start) and select your repository, `OK` along the way, and your App will be live in a minute.
