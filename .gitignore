@@ -7,19 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Environment
 .DS_Store
+*.local
+
+# Lock files
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build files
 dist
 dist-ssr
 coverage
-*.local
 
+# Cypress
 /cypress/videos/
 /cypress/screenshots/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tailwindcss.json
 .idea
 *.suo
 *.ntvs*
