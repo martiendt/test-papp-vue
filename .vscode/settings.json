@@ -8,5 +8,8 @@
   ],
   "css.customData": [
     ".vscode/tailwindcss.json"
-  ]
+  ],
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  }
 }

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rushstack/eslint-patch': ^1.1.4
+  '@tailwindcss/line-clamp': ^0.4.2
   '@types/jsdom': ^20.0.0
   '@types/node': ^16.11.56
   '@vitejs/plugin-vue': ^3.0.3
@@ -36,6 +37,7 @@ dependencies:
 
 devDependencies:
   '@rushstack/eslint-patch': 1.1.4
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
   '@types/jsdom': 20.0.0
   '@types/node': 16.11.57
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.0+vue@3.2.38
@@ -222,6 +224,14 @@ packages:
 
   /@sideway/pinpoint/2.0.0:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+    dev: true
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.1.8_postcss@8.4.16
     dev: true
 
   /@tootallnate/once/2.0.0:

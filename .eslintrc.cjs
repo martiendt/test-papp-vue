@@ -16,6 +16,7 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true, printWidth: 120, semi: false }],
+    'tailwindcss/no-custom-classname': 'off',
   },
   overrides: [
     {

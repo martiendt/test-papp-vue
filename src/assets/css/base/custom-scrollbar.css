@@ -1,0 +1,40 @@
+@layer base {
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1 rounded-lg
+  }
+
+  /* Track */
+  /* ::-webkit-scrollbar-track {} */
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-500 rounded-lg
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-600
+  }
+
+  .is-scrollbar-hidden {
+    @apply [scrollbar-width:none]; /* Firefox */
+  }
+
+  .is-scrollbar-hidden::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    .scrollbar-sm::-webkit-scrollbar {
+      @apply h-1.5 w-1.5;
+    }
+
+    .scrollbar-sm:hover::-webkit-scrollbar-thumb,
+    .scrollbar-sm:focus-within::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-slate-300/80 dark:bg-navy-400;
+    }
+
+    .scrollbar-sm::-webkit-scrollbar-thumb:hover {
+      @apply bg-slate-400 dark:bg-navy-300;
+    }
+  }
+}

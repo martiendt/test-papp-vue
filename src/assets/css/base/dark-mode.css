@@ -1,0 +1,23 @@
+@layer base {
+  /* Dark Mode Button */
+  .darkmode-toggle svg {
+    @apply origin-top animate-[linear_darkmode-btn_200ms_forwards];
+  }
+
+  .darkmode-toggle svg.darkmode-moon {
+    @apply hidden dark:block;
+  }
+
+  .darkmode-toggle svg.darkmode-sun {
+    @apply block dark:hidden;
+  }
+
+  @keyframes darkmode-btn {
+    from {
+      transform: scale(0.75);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
