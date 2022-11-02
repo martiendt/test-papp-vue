@@ -1,0 +1,25 @@
+@layer base {
+  .sidebar-toggle span {
+    @apply h-[2px] w-5 translate-x-0 bg-current transition-all duration-[.25s] ease-in-out;
+  }
+
+  .sidebar-toggle span:nth-child(2) {
+    @apply w-3;
+  }
+
+  .is-sidebar-open .sidebar-toggle span {
+    @apply ml-2 w-[11px] -translate-x-2;
+  }
+
+  .is-sidebar-open .sidebar-toggle span:nth-child(1) {
+    @apply -rotate-45;
+  }
+
+  .is-sidebar-open .sidebar-toggle span:nth-child(2) {
+    @apply hidden;
+  }
+
+  .is-sidebar-open .sidebar-toggle span:nth-child(3) {
+    @apply rotate-45;
+  }
+}

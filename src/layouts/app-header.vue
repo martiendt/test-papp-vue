@@ -7,14 +7,7 @@
       <div class="flex w-full items-center justify-between">
         <!-- Left: Sidebar Toggle Button -->
         <div class="flex items-center">
-          <div class="h-7 w-7">
-            <button
-              class="sidebar-toggle ml-0.5 flex h-7 w-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80"
-              @click="toggleSidebar()"
-            >
-              <i class="fa-solid fa-angle-left" data-fa-transform="grow-5"></i>
-            </button>
-          </div>
+          <component :is="ComponentToggleSidebar" />
           <p>Hello World</p>
         </div>
 
@@ -22,7 +15,7 @@
         <div class="-mr-1.5 flex items-center space-x-2">
           <!-- Mobile Search Toggle -->
           <button
-            class="mobile-searchbar-show btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:hidden"
+            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +35,7 @@
               <input
                 id="searchbar-ref"
                 placeholder="Search here..."
-                class="form-input peer h-full w-60 rounded-full bg-slate-150 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:text-navy-100 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                class="peer h-full w-60 rounded-full bg-slate-150 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:text-navy-100 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
                 type="text"
               />
               <div
@@ -531,16 +524,11 @@
           </div>
 
           <!-- Dark Mode Toggle -->
-          <button
-            class="darkmode-toggle btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
-          >
-            <i class="fa-sharp fa-regular fa-sun-bright" data-fa-transform="grow-5"></i>
-            <!-- <i class="fa-sharp fa-solid fa-moon" data-fa-transform="grow-5"></i> -->
-          </button>
+          <component :is="ComponentDarkMode" />
 
           <!-- Monochrome Mode Toggle -->
           <button
-            class="monochrome-toggle btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
             <i class="fa-solid fa-palette" data-fa-transform="grow-5"></i>
           </button>
@@ -1039,11 +1027,32 @@
 </template>
 
 <script setup lang="ts">
-function toggleSidebar() {
-  if (document.getElementsByClassName('is-sidebar-open').length > 0) {
-    document.body.classList.remove('is-sidebar-open')
-  } else {
-    document.body.classList.add('is-sidebar-open')
-  }
-}
+import ComponentDarkMode from './component-dark-mode.vue'
+import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 </script>
+
+<style lang="postcss" scoped>
+nav.header {
+  @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-navy-700 md:w-[calc(100%-var(--main-sidebar-width))];
+}
+
+nav.header:before {
+  @apply absolute -left-[calc((100vw-100%))] h-full w-[calc(100vw-100%)] bg-white content-[''] dark:bg-navy-750;
+}
+
+nav.header .header-container {
+  @apply px-[var(--margin-x)] transition-[padding,width] duration-[.25s];
+}
+
+.has-min-sidebar nav.header {
+  @apply md:w-[calc(100%-(var(--main-sidebar-width)+var(--sidebar-panel-min-width)))];
+}
+
+.is-sidebar-open nav.header {
+  @apply xl:w-[calc(100%-(var(--main-sidebar-width)+var(--sidebar-panel-width)))];
+}
+
+.is-header-blur nav.header .header-container {
+  @apply backdrop-blur bg-white/80 dark:!bg-navy-750/80;
+}
+</style>

@@ -7,7 +7,9 @@
     <app-header></app-header>
     <!-- <app-secondary-sidebar></app-secondary-sidebar> -->
     <!-- <app-mobile-searchbar></app-mobile-searchbar> -->
-    <RouterView />
+    <main class="main-content w-full px-[var(--margin-x)] pb-8">
+      <RouterView />
+    </main>
     <!-- <app-footer></app-footer> -->
   </div>
 </template>

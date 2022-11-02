@@ -1,6 +1,6 @@
 <template>
   <!-- Sidebar -->
-  <div class="sidebar print:hidden">
+  <div class="print:hidden">
     <!-- Main Sidebar -->
     <div class="main-sidebar">
       <div
@@ -23,7 +23,7 @@
             href="dashboards-crm-analytics.html"
             data-tooltip="Dashboards"
             data-placement="right"
-            class="tooltip-main-sidebar flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+            class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
             <i class="fa-light fa-home" data-fa-transform="grow-12"></i>
           </a>
@@ -31,7 +31,7 @@
             href="dashboards-crm-analytics.html"
             data-tooltip="Dashboards"
             data-placement="right"
-            class="tooltip-main-sidebar flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+            class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
             <i class="fa-light fa-wand-magic-sparkles" data-fa-transform="grow-12"></i>
           </a>
@@ -45,28 +45,24 @@
         <!-- Sidebar Panel Header -->
         <div class="flex h-18 w-full items-center justify-between pl-4 pr-1">
           <p class="text-base tracking-wider text-slate-800 dark:text-navy-100">Templates</p>
-          <button
-            class="sidebar-close btn h-7 w-7 rounded-full p-0 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:text-accent-light/80 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 xl:hidden"
-          >
-            <i class="fa-solid fa-angle-left" data-fa-transform="grow-5"></i>
-          </button>
+          <!-- <component :is="ComponentToggleSidebar" /> -->
         </div>
 
         <!-- Sidebar Panel Body -->
-        <div class="nav-wrapper h-[calc(100%-4.5rem)] overflow-x-hidden pb-6" data-simplebar>
+        <div class="h-[calc(100%-4.5rem)] overflow-x-hidden pb-6" data-simplebar>
           <ul class="flex flex-1 flex-col px-4 font-inter">
             <li class="">
               <button
-                class="ac-trigger flex w-full items-center justify-between py-2 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
+                class="flex w-full items-center justify-between py-2 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
               >
                 <span>Onboarding</span>
                 <i class="fa-solid fa-angle-right"></i>
               </button>
-              <ul class="ac-panel">
+              <ul class="">
                 <li>
                   <a
                     href="pages-onboarding-1.html"
-                    class="nav-link flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
+                    class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                     data-default-class="text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
                     data-active-class="font-medium text-primary dark:text-accent-light"
                   >
@@ -79,7 +75,7 @@
                 <li>
                   <a
                     href="pages-onboarding-2.html"
-                    class="nav-link flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
+                    class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                     data-default-class="text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
                     data-active-class="font-medium text-primary dark:text-accent-light"
                   >
@@ -91,20 +87,18 @@
                 </li>
               </ul>
             </li>
-            <li
-              class="ac nav-parent [&.is-active_.ac-trigger]:font-semibold [&.is-active_.ac-trigger]:text-slate-800 dark:[&.is-active_.ac-trigger]:text-navy-50 [&.is-active_svg]:rotate-90"
-            >
+            <li class="">
               <button
-                class="ac-trigger flex w-full items-center justify-between py-2 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
+                class="flex w-full items-center justify-between py-2 text-xs+ tracking-wide text-slate-500 outline-none transition-[color,padding-left] duration-300 ease-in-out hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
               >
                 <span>User Card</span>
                 <i class="fa-solid fa-angle-right"></i>
               </button>
-              <ul class="ac-panel">
+              <ul>
                 <li>
                   <a
                     href="pages-card-user-1.html"
-                    class="nav-link flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
+                    class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                     data-default-class="text-slate-500 hover:text-slate-800 dark:text-navy-200 dark:hover:text-navy-50"
                     data-active-class="font-medium text-primary dark:text-accent-light"
                   >
@@ -117,7 +111,7 @@
                 <li>
                   <a
                     href="pages-card-user-2.html"
-                    class="nav-link flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
+                    class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                   >
                     <div class="flex items-center space-x-2">
                       <div class="h-1.5 w-1.5 rounded-full border border-current opacity-40"></div>
@@ -134,6 +128,10 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import ComponentToggleSidebar from './component-toggle-sidebar.vue'
+</script>
 
 <style lang="postcss" scoped>
 .main-sidebar {

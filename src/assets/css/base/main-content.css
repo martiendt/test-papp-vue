@@ -1,0 +1,13 @@
+@layer base {
+  .main-content {
+    @apply mt-[60px] grid grid-cols-1 place-content-start transition-[width,margin-left,margin-right,padding-left,padding-right] duration-[.25s] ease-in print:m-0 md:ml-[var(--main-sidebar-width)];
+  }
+
+  .has-min-sidebar .main-content {
+    @apply md:ml-[calc(var(--main-sidebar-width)+var(--sidebar-panel-min-width))];
+  }
+
+  .is-sidebar-open .main-content {
+    @apply ease-out xl:ml-[calc(var(--main-sidebar-width)+var(--sidebar-panel-width))];
+  }
+}

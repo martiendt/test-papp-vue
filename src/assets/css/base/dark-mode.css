@@ -1,5 +1,4 @@
 @layer base {
-  /* Dark Mode Button */
   .darkmode-toggle svg {
     @apply origin-top animate-[linear_darkmode-btn_200ms_forwards];
   }
