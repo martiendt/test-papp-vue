@@ -13,7 +13,7 @@
 
   @keyframes darkmode-btn {
     from {
-      transform: scale(0.75);
+      transform: scale(0.25);
     }
     to {
       transform: scale(1);

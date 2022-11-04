@@ -25,7 +25,7 @@
             data-placement="right"
             class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
-            <i class="fa-light fa-home" data-fa-transform="grow-12"></i>
+            <fa-icon icon="fa-solid fa-house w-6 h-6" />
           </a>
           <a
             href="dashboards-crm-analytics.html"
@@ -33,7 +33,7 @@
             data-placement="right"
             class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
-            <i class="fa-light fa-wand-magic-sparkles" data-fa-transform="grow-12"></i>
+            <fa-icon icon="fa-regular fa-wand-magic-sparkles w-6 h-6" />
           </a>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <!-- Sidebar Panel Header -->
         <div class="flex h-18 w-full items-center justify-between pl-4 pr-1">
           <p class="text-base tracking-wider text-slate-800 dark:text-navy-100">Templates</p>
-          <!-- <component :is="ComponentToggleSidebar" /> -->
+          <component :is="ComponentToggleSidebar" />
         </div>
 
         <!-- Sidebar Panel Body -->
@@ -135,7 +135,7 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 <style lang="postcss" scoped>
 .main-sidebar {
-  @apply fixed top-0 left-0 z-40 h-full w-[var(--main-sidebar-width)] shrink-0 -translate-x-full transform-gpu transition-transform duration-200 ease-in md:z-[60] md:translate-x-0;
+  @apply fixed top-0 left-0 z-40 h-full w-[var(--main-sidebar-width)] shrink-0 -translate-x-full transform-gpu transition-transform duration-200 ease-in md:z-[60] md:translate-x-0 !bg-green-500;
 }
 
 .is-sidebar-open .main-sidebar {

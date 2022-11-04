@@ -14,7 +14,7 @@ import { watch, ref, onMounted } from 'vue'
 const loaded = ref(0)
 const loadingText = ref(`is loading ${loaded.value} %`)
 const preloaderRef = ref()
-let loadingState: number
+let loadingState: any
 
 onMounted(() => {
   hideBodyOverflow()

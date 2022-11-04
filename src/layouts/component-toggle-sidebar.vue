@@ -7,8 +7,8 @@
       <div v-if="!isOpen">
         <i class="fa-solid fa-angle-left" data-fa-transform="grow-5"></i>
       </div>
-      <div v-if="isOpen" class="">
-        <i class="fa-solid fa-angle-right rotate-90 bg-red-600 text-2xl" data-fa-transform="grow-5"></i>
+      <div v-if="isOpen">
+        <i class="fa-solid fa-angle-right" data-fa-transform="grow-5"></i>
       </div>
     </button>
   </div>
@@ -18,7 +18,7 @@
 import { ref } from 'vue'
 
 const isOpen = ref(true)
-isOpen.value = document.body.classList.contains('is-sidebar-open')
+isOpen.value = false
 
 const toggleSidebar = () => {
   console.log('isopen1 ', isOpen)

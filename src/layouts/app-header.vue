@@ -8,7 +8,7 @@
         <!-- Left: Sidebar Toggle Button -->
         <div class="flex items-center">
           <component :is="ComponentToggleSidebar" />
-          <p>Hello World</p>
+          <p>Title</p>
         </div>
 
         <!-- Right: Header buttons -->
@@ -28,7 +28,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
-
+          
           <!-- Main Searchbar -->
           <div id="searchbar-wrapper" class="hidden sm:flex">
             <div class="relative mr-4 flex h-8">
@@ -530,7 +530,7 @@
           <button
             class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
-            <i class="fa-solid fa-palette" data-fa-transform="grow-5"></i>
+            <fa-icon icon="fa-solid fa-palette" transform="grow-8" />
           </button>
 
           <!-- Notification-->
@@ -539,7 +539,7 @@
               id="notification-ref"
               class="btn relative h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
             >
-              <i class="fa-regular fa-bell" data-fa-transform="grow-5"></i>
+              <fa-icon icon="fa-regular fa-bell" transform="grow-8" />
 
               <span class="absolute -top-px -right-px flex h-3 w-3 items-center justify-center">
                 <span
@@ -1018,7 +1018,7 @@
             data-target="#right-sidebar"
             class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
           >
-            <i class="fa-regular fa-grid-2" data-fa-transform="grow-5"></i>
+            <fa-icon icon="fa-regular fa-grid-2" transform="grow-8" />
           </button>
         </div>
       </div>

@@ -1,0 +1,10 @@
+@layer base {
+  /* Prevent fontawesome icon flashing on first load  */
+  body {
+    display: none;
+  }
+
+  .fontawesome-i2svg-active body {
+    display: initial;
+  }
+}
