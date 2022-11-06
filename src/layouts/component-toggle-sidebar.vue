@@ -21,9 +21,7 @@ const isOpen = ref(true)
 isOpen.value = false
 
 const toggleSidebar = () => {
-  console.log('isopen1 ', isOpen)
   isOpen.value = document.body.classList.contains('is-sidebar-open')
-  console.log('isopen2 ', isOpen)
   if (isOpen.value) {
     document.body.classList.remove('is-sidebar-open')
     isOpen.value = false

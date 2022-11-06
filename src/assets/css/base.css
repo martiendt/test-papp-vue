@@ -3,7 +3,6 @@
 @import "./base/dark-mode.css";
 @import "./base/main-content.css";
 @import "./base/sidebar-toggle.css";
-/* @import "./base/font-awesome-kit.css"; */
 
 @layer base {
   :root {

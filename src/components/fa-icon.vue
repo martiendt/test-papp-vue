@@ -1,5 +1,5 @@
 <template>
-  <span v-if="!isHidden">
+  <span class="wait-for-fa">
     <i :class="props.icon" :data-fa-transform="transform"></i>
   </span>
 </template>
@@ -8,9 +8,5 @@
 const props = defineProps({
   icon: String,
   transform: String,
-  isHidden: {
-    type: Boolean,
-    default: false
-  }
 })
 </script>
