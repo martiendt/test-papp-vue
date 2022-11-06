@@ -4,30 +4,22 @@
       class="sidebar-toggle ml-0.5 flex h-7 w-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80"
       @click="toggleSidebar()"
     >
-      <div v-if="!isOpen">
-        <i class="fa-solid fa-angle-left" data-fa-transform="grow-5"></i>
+      <div v-if="!storeLayout.isSidebarOpen">
+        <i class="fa-solid fa-bars" data-fa-transform="grow-5"></i>
       </div>
-      <div v-if="isOpen">
-        <i class="fa-solid fa-angle-right" data-fa-transform="grow-5"></i>
+      <div v-if="storeLayout.isSidebarOpen">
+        <i class="fa-solid fa-xmark" data-fa-transform="grow-5"></i>
       </div>
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useStoreLayout } from '@/stores/layout'
 
-const isOpen = ref(true)
-isOpen.value = false
+const storeLayout = useStoreLayout()
 
 const toggleSidebar = () => {
-  isOpen.value = document.body.classList.contains('is-sidebar-open')
-  if (isOpen.value) {
-    document.body.classList.remove('is-sidebar-open')
-    isOpen.value = false
-  } else {
-    document.body.classList.add('is-sidebar-open')
-    isOpen.value = true
-  }
+  storeLayout.toggleSidebar()
 }
 </script>

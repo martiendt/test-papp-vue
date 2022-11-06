@@ -45,7 +45,7 @@
         <!-- Sidebar Panel Header -->
         <div class="flex h-18 w-full items-center justify-between pl-4 pr-1">
           <p class="text-base tracking-wider text-slate-800 dark:text-navy-100">Templates</p>
-          <component :is="ComponentToggleSidebar" />
+          <component :is="ComponentToggleSidebar" v-if="windowWidth < 1280" />
         </div>
 
         <!-- Sidebar Panel Body -->
@@ -131,6 +131,7 @@
 
 <script setup lang="ts">
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
+const windowWidth = window.innerWidth
 </script>
 
 <style lang="postcss" scoped>
