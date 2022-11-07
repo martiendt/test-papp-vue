@@ -23,3 +23,9 @@ import AppHeader from './app-header.vue'
 // import AppMobileSearchbar from './app-mobile-searchbar.vue'
 // import AppFooter from './app-footer.vue'
 </script>
+
+<style lang="postcss" scoped>
+.main-content {
+  @apply w-full lg:w-[calc(100%-(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width)))] lg:ml-[calc(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width))] px-8;
+}
+</style>

@@ -2,7 +2,7 @@
   <!-- App Header Wrapper-->
   <nav class="header print:hidden">
     <!-- App Header  -->
-    <div class="header-container relative flex w-full bg-white dark:bg-navy-700 print:hidden">
+    <div class="header-container relative flex w-full print:hidden">
       <!-- Header Items -->
       <div class="flex w-full items-center justify-between">
         <!-- Left: Sidebar Toggle Button -->
@@ -1033,26 +1033,27 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 <style lang="postcss" scoped>
 nav.header {
-  @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-navy-700 md:w-[calc(100%-var(--main-sidebar-width))];
+  @apply fixed top-0 flex w-full h-[3.5rem] z-20 px-8 bg-white dark:bg-navy-700
+  /* @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-navy-700 md:w-[calc(100%-var(--main-sidebar-width))]; */;
 }
 
 nav.header:before {
-  @apply absolute -left-[calc((100vw-100%))] h-full w-[calc(100vw-100%)] bg-white content-[''] dark:bg-navy-750;
+  /* @apply absolute -left-[calc((100vw-100%))] h-full w-[calc(100vw-100%)] bg-white content-[''] dark:bg-navy-750; */
 }
 
 nav.header .header-container {
-  @apply px-[var(--margin-x)] transition-[padding,width] duration-[.25s];
+  /* @apply px-[var(--margin-x)] transition-[padding,width] duration-[.25s]; */
 }
 
 .has-min-sidebar nav.header {
-  @apply md:w-[calc(100%-(var(--main-sidebar-width)+var(--sidebar-panel-min-width)))];
+  /* @apply md:w-[calc(100%-(var(--main-sidebar-width)+var(--sidebar-panel-min-width)))]; */
 }
 
 .is-sidebar-open nav.header {
-  @apply xl:w-[calc(100%-(var(--main-sidebar-width)+var(--sidebar-panel-width)))];
+  @apply lg:w-[calc(100%-(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width)))] lg:ml-[calc(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width))] duration-200;
 }
 
 .is-header-blur nav.header .header-container {
-  @apply backdrop-blur bg-white/80 dark:!bg-navy-750/80;
+  /* @apply backdrop-blur bg-white/80 dark:!bg-navy-750/80; */
 }
 </style>

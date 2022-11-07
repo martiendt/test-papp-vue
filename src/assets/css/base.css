@@ -6,6 +6,11 @@
 
 @layer base {
   :root {
+    @apply [--main-sidebar-shortcut-width:4.5rem]
+      [--main-sidebar-panel-width:15rem]
+      [--ease-in:0.4,0,1,1]
+      [--ease-out:0,0,0.2,1]
+      [--ease-in-out:0.4,0,0.2,1];
     /* @apply [--margin-x:1rem]
     [--main-sidebar-width:4.5rem]
     [--sidebar-panel-width:230px]
@@ -20,10 +25,10 @@
   }
 
   .has-min-sidebar {
-    @apply xl:mx-[2.5rem];
+    /* @apply xl:mx-[2.5rem]; */
   }
 
   .is-sidebar-open {
-    @apply xl:mx-[15.5rem];
+    /* @apply lg:mx-[15rem]; */
   }
 }
