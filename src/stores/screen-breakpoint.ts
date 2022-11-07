@@ -1,23 +1,12 @@
 import { defineStore } from 'pinia'
 
-export const useStoreLayout = defineStore('layout', {
+export const useScreenBreakpointStore = defineStore('screen-breakpoint', {
   state: () => ({
-    isSidebarOpen: document.body.classList.contains('is-sidebar-open'),
     windowWidth: 0,
     windowHeight: 0,
     screenBreakpoint: 'sm',
   }),
   actions: {
-    toggleSidebar() {
-      this.isSidebarOpen = document.body.classList.contains('is-sidebar-open')
-      if (this.isSidebarOpen) {
-        document.body.classList.remove('is-sidebar-open')
-        this.isSidebarOpen = false
-      } else {
-        document.body.classList.add('is-sidebar-open')
-        this.isSidebarOpen = true
-      }
-    },
     onResizeWindow() {
       this.windowWidth = window.innerWidth
       this.windowHeight = window.innerHeight

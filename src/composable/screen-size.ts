@@ -1,19 +1,19 @@
-import { useStoreLayout } from '@/stores/layout'
+import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
 import { onMounted, nextTick, onBeforeUnmount } from 'vue'
 
 export function useScreenSize() {
-  const storeLayout = useStoreLayout()
+  const screenBreakpointStore = useScreenBreakpointStore()
 
   onMounted(async () => {
-    storeLayout.onResizeWindow()
+    screenBreakpointStore.onResizeWindow()
     await nextTick(() => {
-      window.addEventListener('resize', storeLayout.onResizeWindow)
+      window.addEventListener('resize', screenBreakpointStore.onResizeWindow)
     })
   })
 
   onBeforeUnmount(async () => {
     await nextTick(() => {
-      window.removeEventListener('resize', storeLayout.onResizeWindow)
+      window.removeEventListener('resize', screenBreakpointStore.onResizeWindow)
     })
   })
 }

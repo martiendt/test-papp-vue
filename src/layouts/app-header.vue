@@ -526,13 +526,6 @@
           <!-- Dark Mode Toggle -->
           <component :is="ComponentDarkMode" />
 
-          <!-- Monochrome Mode Toggle -->
-          <button
-            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
-          >
-            <fa-icon icon="fa-solid fa-palette" transform="grow-8" />
-          </button>
-
           <!-- Notification-->
           <div id="notification-wrapper" class="flex">
             <button
