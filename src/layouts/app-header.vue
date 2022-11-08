@@ -15,11 +15,11 @@
         <div class="-mr-1.5 flex items-center space-x-2">
           <!-- Mobile Search Toggle -->
           <button
-            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 sm:hidden"
+            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25 sm:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5.5 w-5.5 text-slate-500 dark:text-navy-100"
+              class="h-5.5 w-5.5 text-slate-500 dark:text-slate-100"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -35,11 +35,11 @@
               <input
                 id="searchbar-ref"
                 placeholder="Search here..."
-                class="peer h-full w-60 rounded-full bg-slate-150 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:text-navy-100 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900"
+                class="peer h-full w-60 rounded-full bg-slate-150 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-slate-900/90 dark:text-slate-100 dark:ring-accent/50 dark:placeholder:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900"
                 type="text"
               />
               <div
-                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent"
+                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-slate-300 dark:peer-focus:text-accent"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,15 +55,15 @@
             </div>
             <!-- <div id="searchbar-box" data-active-tab="#search-all" class="popper-root search-tab-wrapper">
               <div
-                class="popper-box flex max-h-[calc(100vh-6rem)] w-80 flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-navy-800 dark:bg-navy-700 dark:shadow-soft-dark"
+                class="popper-box flex max-h-[calc(100vh-6rem)] w-80 flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark"
               >
                 <div
-                  class="is-scrollbar-hidden flex shrink-0 overflow-x-auto rounded-t-lg bg-slate-100 px-2 text-slate-600 dark:bg-navy-800 dark:text-navy-200"
+                  class="is-scrollbar-hidden flex shrink-0 overflow-x-auto rounded-t-lg bg-slate-100 px-2 text-slate-600 dark:bg-slate-800 dark:text-slate-200"
                 >
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-all"
                   >
                     All
@@ -71,7 +71,7 @@
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-files"
                   >
                     Files
@@ -79,7 +79,7 @@
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-chats"
                   >
                     Chats
@@ -87,7 +87,7 @@
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-emails"
                   >
                     Emails
@@ -95,7 +95,7 @@
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-projects"
                   >
                     Projects
@@ -103,7 +103,7 @@
                   <button
                     class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                     data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                    data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                     data-target="#search-tasks"
                   >
                     Tasks
@@ -132,7 +132,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Kanban
                       </p>
@@ -153,7 +153,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Analytics
                       </p>
@@ -178,7 +178,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Chat
                       </p>
@@ -204,7 +204,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Files
                       </p>
@@ -229,7 +229,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Crypto
                       </p>
@@ -254,7 +254,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Banking
                       </p>
@@ -276,7 +276,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Todo
                       </p>
@@ -297,7 +297,7 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Analytics
                       </p>
@@ -322,14 +322,14 @@
                         </div>
                       </div>
                       <p
-                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-navy-100"
+                        class="mt-1.5 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-slate-700 dark:text-slate-100"
                       >
                         Orders
                       </p>
                     </a>
                   </div>
 
-                  <div class="mt-3 flex items-center justify-between bg-slate-100 py-1.5 px-3 dark:bg-navy-800">
+                  <div class="mt-3 flex items-center justify-between bg-slate-100 py-1.5 px-3 dark:bg-slate-800">
                     <p class="text-xs uppercase">Recent</p>
                     <a
                       href="#"
@@ -341,12 +341,12 @@
 
                   <div class="mt-1 font-inter font-medium">
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="apps-chat.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -361,12 +361,12 @@
                       <span>Chat App</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="apps-filemanager.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -381,12 +381,12 @@
                       <span>File Manager App</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="apps-mail.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -401,12 +401,12 @@
                       <span>Email App</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="apps-kanban.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -421,12 +421,12 @@
                       <span>Kanban Board</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="apps-todo.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -438,12 +438,12 @@
                       <span>Todo App</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="dashboards-crypto-2.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -459,12 +459,12 @@
                       <span>Crypto Dashboard</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="dashboards-banking-2.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -480,12 +480,12 @@
                       <span>Banking Dashboard</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="dashboards-crm-analytics.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -497,12 +497,12 @@
                       <span>Analytics Dashboard</span>
                     </a>
                     <a
-                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100"
+                      class="group flex items-center space-x-2 px-2.5 py-2 tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-slate-600 dark:hover:text-slate-100 dark:focus:bg-slate-600 dark:focus:text-slate-100"
                       href="dashboards-influencer.html"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-navy-300 dark:group-hover:text-navy-200 dark:group-focus:text-navy-200"
+                        class="h-4.5 w-4.5 text-slate-400 transition-colors group-hover:text-slate-500 group-focus:text-slate-500 dark:text-slate-300 dark:group-hover:text-slate-200 dark:group-focus:text-slate-200"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -530,7 +530,7 @@
           <div id="notification-wrapper" class="flex">
             <button
               id="notification-ref"
-              class="btn relative h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+              class="btn relative h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
             >
               <fa-icon icon="fa-regular fa-bell" transform="grow-8" />
 
@@ -543,12 +543,12 @@
             </button>
             <!-- <div id="notification-box" class="popper-root">
               <div
-                class="notification-tab-wrapper popper-box mx-4 mt-1 flex max-h-[calc(100vh-6rem)] w-[calc(100vw-2rem)] flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-navy-800 dark:bg-navy-700 dark:shadow-soft-dark sm:m-0 sm:w-80"
+                class="notification-tab-wrapper popper-box mx-4 mt-1 flex max-h-[calc(100vh-6rem)] w-[calc(100vw-2rem)] flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark sm:m-0 sm:w-80"
               >
-                <div class="rounded-t-lg bg-slate-100 text-slate-600 dark:bg-navy-800 dark:text-navy-200">
+                <div class="rounded-t-lg bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-200">
                   <div class="flex items-center justify-between px-4 pt-2">
                     <div class="flex items-center space-x-2">
-                      <h3 class="font-medium text-slate-700 dark:text-navy-100">Notifications</h3>
+                      <h3 class="font-medium text-slate-700 dark:text-slate-100">Notifications</h3>
                       <div
                         class="badge h-5 rounded-full bg-primary/10 px-1.5 text-primary dark:bg-accent-light/15 dark:text-accent-light"
                       >
@@ -557,7 +557,7 @@
                     </div>
 
                     <button
-                      class="btn -mr-1.5 h-7 w-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                      class="btn -mr-1.5 h-7 w-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -581,7 +581,7 @@
                     <button
                       class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                       data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                       data-target="#notification-all"
                     >
                       <span>All</span>
@@ -589,7 +589,7 @@
                     <button
                       class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                       data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                       data-target="#notification-alerts"
                     >
                       <span>Alerts</span>
@@ -597,7 +597,7 @@
                     <button
                       class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                       data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                       data-target="#notification-events"
                     >
                       <span>Events</span>
@@ -605,7 +605,7 @@
                     <button
                       class="tab btn shrink-0 rounded-none border-b-2 px-3.5 py-2.5"
                       data-active-class="border-primary dark:border-accent text-primary dark:text-accent-light"
-                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100"
+                      data-default-class="border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-slate-100 dark:focus:text-slate-100"
                       data-target="#notification-logs"
                     >
                       <span>Logs</span>
@@ -625,8 +625,8 @@
                         <i class="fa fa-user-edit text-secondary dark:text-secondary-light"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">User Photo Changed</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">User Photo Changed</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           John Doe changed his avatar photo
                         </div>
                       </div>
@@ -651,10 +651,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Mon, June 14, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Mon, June 14, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">08:00 - 09:00</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
 
                           <span class="line-clamp-1">Frontend Conf</span>
                         </div>
@@ -667,8 +667,8 @@
                         <i class="fa-solid fa-image text-primary dark:text-accent-light"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Images Added</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Images Added</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Mores Clarke added new image gallery
                         </div>
                       </div>
@@ -680,8 +680,8 @@
                         <i class="fa fa-leaf text-success"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Design Completed</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Design Completed</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Robert Nolan completed the design of the CRM application
                         </div>
                       </div>
@@ -706,10 +706,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Wed, June 21, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Wed, June 21, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">16:00 - 20:00</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
 
                           <span class="line-clamp-1">UI/UX Conf</span>
                         </div>
@@ -722,8 +722,8 @@
                         <i class="fa fa-project-diagram text-warning"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">ER Diagram</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">ER Diagram</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Team completed the ER diagram app
                         </div>
                       </div>
@@ -748,10 +748,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">THU, May 11, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">THU, May 11, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">10:00 - 11:30</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
                           <span class="line-clamp-1">Interview, Konnor Guzman </span>
                         </div>
                       </div>
@@ -763,8 +763,8 @@
                         <i class="fa fa-history text-error"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Weekly Report</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Weekly Report</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           The weekly report was uploaded
                         </div>
                       </div>
@@ -781,8 +781,8 @@
                         <i class="fa fa-user-edit text-secondary dark:text-secondary-light"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">User Photo Changed</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">User Photo Changed</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           John Doe changed his avatar photo
                         </div>
                       </div>
@@ -794,8 +794,8 @@
                         <i class="fa-solid fa-image text-primary dark:text-accent-light"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Images Added</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Images Added</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Mores Clarke added new image gallery
                         </div>
                       </div>
@@ -807,8 +807,8 @@
                         <i class="fa fa-leaf text-success"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Design Completed</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Design Completed</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Robert Nolan completed the design of the CRM application
                         </div>
                       </div>
@@ -820,8 +820,8 @@
                         <i class="fa fa-project-diagram text-warning"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">ER Diagram</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">ER Diagram</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           Team completed the ER diagram app
                         </div>
                       </div>
@@ -833,8 +833,8 @@
                         <i class="fa fa-history text-error"></i>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Weekly Report</p>
-                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Weekly Report</p>
+                        <div class="line-clamp-1 mt-1 text-xs text-slate-400 dark:text-slate-300">
                           The weekly report was uploaded
                         </div>
                       </div>
@@ -864,10 +864,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Mon, June 14, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Mon, June 14, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">08:00 - 09:00</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
 
                           <span class="line-clamp-1">Frontend Conf</span>
                         </div>
@@ -893,10 +893,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Wed, June 21, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Wed, June 21, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">16:00 - 20:00</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
 
                           <span class="line-clamp-1">UI/UX Conf</span>
                         </div>
@@ -922,10 +922,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">THU, May 11, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">THU, May 11, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">10:00 - 11:30</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
                           <span class="line-clamp-1">Interview, Konnor Guzman </span>
                         </div>
                       </div>
@@ -950,10 +950,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Mon, Jul 16, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Mon, Jul 16, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">06:00 - 16:00</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
 
                           <span class="line-clamp-1">Laravel Conf</span>
                         </div>
@@ -979,10 +979,10 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="font-medium text-slate-600 dark:text-navy-100">Wed, Jun 16, 2021</p>
-                        <div class="mt-1 flex text-xs text-slate-400 dark:text-navy-300">
+                        <p class="font-medium text-slate-600 dark:text-slate-100">Wed, Jun 16, 2021</p>
+                        <div class="mt-1 flex text-xs text-slate-400 dark:text-slate-300">
                           <span class="shrink-0">15:30 - 11:30</span>
-                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-navy-500"></div>
+                          <div class="mx-2 my-1 w-px bg-slate-200 dark:bg-slate-500"></div>
                           <span class="line-clamp-1">Interview, Jonh Doe </span>
                         </div>
                       </div>
@@ -995,8 +995,8 @@
                     <div class="mt-8 pb-8 text-center">
                       <img class="mx-auto w-36" src="images/illustrations/empty-girl-box.svg" alt="image" />
                       <div class="mt-5">
-                        <p class="text-base font-semibold text-slate-700 dark:text-navy-100">No any logs</p>
-                        <p class="text-slate-400 dark:text-navy-300">There are no unread logs yet</p>
+                        <p class="text-base font-semibold text-slate-700 dark:text-slate-100">No any logs</p>
+                        <p class="text-slate-400 dark:text-slate-300">There are no unread logs yet</p>
                       </div>
                     </div>
                   </div>
@@ -1009,7 +1009,7 @@
           <button
             data-toggle="drawer"
             data-target="#right-sidebar"
-            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
           >
             <fa-icon icon="fa-regular fa-grid-2" transform="grow-8" />
           </button>
@@ -1026,12 +1026,12 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 <style lang="postcss" scoped>
 nav.header {
-  @apply fixed top-0 flex w-full h-[3.5rem] z-20 px-8 bg-white dark:bg-navy-700
-  /* @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-navy-700 md:w-[calc(100%-var(--main-sidebar-width))]; */;
+  @apply fixed top-0 flex w-full h-[3.5rem] z-20 px-8 bg-white dark:bg-slate-800
+  /* @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-slate-700 md:w-[calc(100%-var(--main-sidebar-width))]; */;
 }
 
 nav.header:before {
-  /* @apply absolute -left-[calc((100vw-100%))] h-full w-[calc(100vw-100%)] bg-white content-[''] dark:bg-navy-750; */
+  /* @apply absolute -left-[calc((100vw-100%))] h-full w-[calc(100vw-100%)] bg-white content-[''] dark:bg-slate-750; */
 }
 
 nav.header .header-container {
@@ -1047,6 +1047,6 @@ nav.header .header-container {
 }
 
 .is-header-blur nav.header .header-container {
-  /* @apply backdrop-blur bg-white/80 dark:!bg-navy-750/80; */
+  /* @apply backdrop-blur bg-white/80 dark:!bg-slate-750/80; */
 }
 </style>

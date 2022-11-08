@@ -14,10 +14,217 @@ export const useSideMenuPanelStore = defineStore('side-menu-panel', {
           {
             title: 'Page 1.2',
           },
+          {
+            title: 'Page 1.2',
+          },
+          {
+            title: 'Page 1.2',
+          },
+          {
+            title: 'Page 1.2',
+          },
         ],
       },
       {
         title: 'Page 2',
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
+      },
+      {
+        title: 'Page 3',
+        subMenu: [
+          {
+            title: 'Page 3.1',
+          },
+          {
+            title: 'Page 3.2',
+          },
+        ],
       },
       {
         title: 'Page 3',

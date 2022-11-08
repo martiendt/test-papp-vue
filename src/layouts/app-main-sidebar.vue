@@ -25,34 +25,40 @@
       <div class="main-sidebar-panel-container">
         <!-- Sidebar Panel Header -->
         <div class="main-sidebar-panel-header">
-          <p class="text-base tracking-wider text-navy-100">Templates</p>
+          <p class="text-base tracking-wider text-slate-100">Templates</p>
           <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" />
         </div>
 
         <!-- Sidebar Panel Body -->
         <div class="main-sidebar-panel-body">
           <ul class="flex flex-1 flex-col px-4">
-            <li v-for="menu in sideMenuPanelStore.menu" :key="menu.title" class="">
+            <li v-for="menu in sideMenuPanelStore.menu" :key="menu.title">
               <button class="menu-link-button" @click="menu.active = !menu.active">
                 <span>{{ menu.title }}</span>
                 <fa-icon
                   v-if="menu.subMenu"
-                  icon="fa-solid fa-angle-right"
-                  :class="{ 'rotate-90': menu.active }"
+                  icon="fa-solid fa-angle-right "
+                  :class="{ 'rotate-90 transition': menu.active }"
                 ></fa-icon>
               </button>
-              <template v-if="menu.active">
-                <ul v-for="subMenu in menu.subMenu" :key="subMenu.title" class="">
-                  <li>
+              <div v-if="menu.subMenu && menu.subMenu.length > 0">
+                <ul
+                  class="transition-all transform-gpu"
+                  :class="{
+                    'max-h-64 bg-slate-600 p-1 rounded-lg': menu.active,
+                    'max-h-0 overflow-hidden': !menu.active,
+                  }"
+                >
+                  <li v-for="subMenu in menu.subMenu" :key="subMenu.title" class="overflow-hidden">
                     <router-link to="#" class="submenu-link">
-                      <div class="flex items-center space-x-2">
+                      <div class="flex items-center space-x-2 text-slate-300">
                         <div class="bullet-list"></div>
                         <span>{{ subMenu.title }}</span>
                       </div>
                     </router-link>
                   </li>
                 </ul>
-              </template>
+              </div>
               <div v-if="menu.separator" class="menu-separator"></div>
             </li>
           </ul>
@@ -73,7 +79,7 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 
 <style lang="postcss" scoped>
 .main-sidebar-logo {
-  @apply h-12 w-12 transition-transform duration-500 ease-in-out hover:rotate-[360deg];
+  @apply h-12 w-12 transition-transform duration-500 hover:rotate-[360deg];
 }
 
 .is-sidebar-open .main-sidebar {
@@ -85,11 +91,11 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .main-sidebar-shortcut-container {
-  @apply flex h-full w-full flex-col items-center border-r bg-navy-800 border-navy-700;
+  @apply flex h-full w-full flex-col items-center border-r bg-slate-800 border-slate-700;
 }
 
 .main-sidebar-shortcut-body {
-  @apply is-scrollbar-hidden flex grow flex-col space-y-4 overflow-y-auto pt-6 text-navy-200;
+  @apply flex grow flex-col space-y-4 overflow-y-auto pt-6 text-slate-200;
 }
 
 .is-sidebar-open .main-sidebar-shortcut {
@@ -97,7 +103,7 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .main-sidebar-shortcut-link {
-  @apply flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-navy-300/20 focus:bg-navy-300/20 active:bg-navy-300/25;
+  @apply flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25;
 }
 
 .main-sidebar-panel {
@@ -109,7 +115,7 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .main-sidebar-panel-container {
-  @apply flex h-full grow flex-col bg-navy-750;
+  @apply flex h-full grow flex-col bg-slate-800;
 }
 
 .main-sidebar-panel-header {
@@ -129,10 +135,10 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .main-sidebar-panel-body .menu-link-button {
-  @apply flex w-full items-center justify-between py-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out text-navy-200 hover:text-navy-50;
+  @apply flex w-full items-center justify-between py-2 text-sm tracking-wide outline-none duration-300 ease-in-out text-slate-200 hover:text-slate-50;
 }
 
 .main-sidebar-panel-body .submenu-link {
-  @apply flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4 text-navy-200 hover:text-navy-50;
+  @apply flex items-center justify-between p-2 text-sm tracking-wide outline-none duration-300 ease-in-out hover:pl-4 text-slate-200 hover:text-slate-50;
 }
 </style>
