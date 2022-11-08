@@ -35,7 +35,7 @@
               <input
                 id="searchbar-ref"
                 placeholder="Search here..."
-                class="peer h-full w-60 rounded-full bg-slate-150 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-slate-900/90 dark:text-slate-100 dark:ring-accent/50 dark:placeholder:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900"
+                class="peer h-full w-60 rounded-full bg-slate-100 px-4 pl-9 text-xs+ text-slate-800 ring-primary/50 hover:bg-slate-200 focus:ring dark:bg-slate-900/90 dark:text-slate-100 dark:ring-accent/50 dark:placeholder:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900"
                 type="text"
               />
               <div
@@ -55,7 +55,7 @@
             </div>
             <!-- <div id="searchbar-box" data-active-tab="#search-all" class="popper-root search-tab-wrapper">
               <div
-                class="popper-box flex max-h-[calc(100vh-6rem)] w-80 flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark"
+                class="popper-box flex max-h-[calc(100vh-6rem)] w-80 flex-col rounded-lg border border-slate-100 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark"
               >
                 <div
                   class="is-scrollbar-hidden flex shrink-0 overflow-x-auto rounded-t-lg bg-slate-100 px-2 text-slate-600 dark:bg-slate-800 dark:text-slate-200"
@@ -543,7 +543,7 @@
             </button>
             <!-- <div id="notification-box" class="popper-root">
               <div
-                class="notification-tab-wrapper popper-box mx-4 mt-1 flex max-h-[calc(100vh-6rem)] w-[calc(100vw-2rem)] flex-col rounded-lg border border-slate-150 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark sm:m-0 sm:w-80"
+                class="notification-tab-wrapper popper-box mx-4 mt-1 flex max-h-[calc(100vh-6rem)] w-[calc(100vw-2rem)] flex-col rounded-lg border border-slate-100 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-700 dark:shadow-soft-dark sm:m-0 sm:w-80"
               >
                 <div class="rounded-t-lg bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-200">
                   <div class="flex items-center justify-between px-4 pt-2">
@@ -1027,7 +1027,7 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 <style lang="postcss" scoped>
 nav.header {
   @apply fixed top-0 flex w-full h-[3.5rem] z-20 px-8 bg-white dark:bg-slate-800
-  /* @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-150  dark:border-slate-700 md:w-[calc(100%-var(--main-sidebar-width))]; */;
+  /* @apply fixed top-0 right-0 z-20 flex h-[61px] w-full border-b border-slate-100  dark:border-slate-700 md:w-[calc(100%-var(--main-sidebar-width))]; */;
 }
 
 nav.header:before {

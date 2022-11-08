@@ -3,24 +3,7 @@
 const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
-const navyColor = {
-  50: '#E7E9EF',
-  100: '#C2C9D6',
-  200: '#A3ADC2',
-  300: '#697A9B',
-  400: '#5C6B8A',
-  450: '#465675',
-  500: '#384766',
-  600: '#313E59',
-  700: '#26334D',
-  750: '#222E45',
-  800: '#202B40',
-  900: '#192132',
-}
-
 const customColors = {
-  navy: navyColor,
-  'slate-150': '#E9EEF5',
   primary: colors.indigo['600'],
   'primary-focus': colors.indigo['700'],
   'secondary-light': '#ff57d8',
@@ -56,33 +39,6 @@ module.exports = {
       },
       colors: {
         ...customColors,
-        'blue-liberty': {
-          50: '#41495c',
-          100: '#373f52',
-          200: '#2d3548',
-          300: '#232b3e',
-          400: '#192134',
-          500: '#0f172a',
-          600: '#050d20',
-          700: '#000316',
-          800: '#00000c',
-          900: '#000002',
-        },
-        ebony: {
-          50: '#f4f3fc',
-          100: '#e6e6f8',
-          200: '#c7c8f0',
-          300: '#9699e3',
-          400: '#5e65d2',
-          500: '#3941be',
-          600: '#292da0',
-          700: '#222382',
-          800: '#20216c',
-          900: '#09091a',
-        },
-      },
-      opacity: {
-        15: '.15',
       },
       spacing: {
         4.5: '1.125rem',
@@ -92,13 +48,6 @@ module.exports = {
       boxShadow: {
         soft: '0 3px 10px 0 rgb(48 46 56 / 6%)',
         'soft-dark': '0 3px 10px 0 rgb(25 33 50 / 30%)',
-      },
-      zIndex: {
-        1: '1',
-        2: '2',
-        3: '3',
-        4: '4',
-        5: '5',
       },
       keyframes: {
         'fade-out': {

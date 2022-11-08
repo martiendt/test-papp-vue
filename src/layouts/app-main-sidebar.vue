@@ -45,7 +45,7 @@
                 <ul
                   class="transition-all transform-gpu"
                   :class="{
-                    'max-h-64 bg-slate-600 p-1 rounded-lg': menu.active,
+                    'max-h-64 bg-slate-700 p-1 rounded-lg': menu.active,
                     'max-h-0 overflow-hidden': !menu.active,
                   }"
                 >
