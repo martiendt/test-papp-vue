@@ -6,7 +6,7 @@
       <!-- Header Items -->
       <div class="flex w-full items-center justify-between">
         <!-- Left: Sidebar Toggle Button -->
-        <div class="flex items-center">
+        <div class="flex space-x-2">
           <component :is="ComponentToggleSidebar" />
           <p>Title</p>
         </div>
@@ -530,9 +530,9 @@
           <div id="notification-wrapper" class="flex">
             <button
               id="notification-ref"
-              class="btn relative h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
+              class="btn relative rounded-full hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
             >
-              <fa-icon icon="fa-regular fa-bell" transform="grow-8" />
+              <fa-icon icon="fa-regular fa-bell w-5 h-5" class="w-8 h-8 flex items-center justify-center" />
 
               <span class="absolute -top-px -right-px flex h-3 w-3 items-center justify-center">
                 <span
@@ -1009,9 +1009,9 @@
           <button
             data-toggle="drawer"
             data-target="#right-sidebar"
-            class="btn h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
+            class="btn rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-slate-300/20 dark:focus:bg-slate-300/20 dark:active:bg-slate-300/25"
           >
-            <fa-icon icon="fa-regular fa-grid-2" transform="grow-8" />
+            <fa-icon icon="fa-regular fa-grid-2 w-5 h-5" class="w-8 h-8 flex items-center justify-center" />
           </button>
         </div>
       </div>

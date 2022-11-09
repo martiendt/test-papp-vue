@@ -51,7 +51,7 @@
                 >
                   <li v-for="subMenu in menu.subMenu" :key="subMenu.title" class="overflow-hidden">
                     <router-link to="#" class="submenu-link">
-                      <div class="flex items-center space-x-2 text-slate-300">
+                      <div class="flex items-center space-x-2">
                         <div class="bullet-list"></div>
                         <span>{{ subMenu.title }}</span>
                       </div>
@@ -135,10 +135,10 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .main-sidebar-panel-body .menu-link-button {
-  @apply flex w-full items-center justify-between py-2 text-sm tracking-wide outline-none duration-300 ease-in-out text-slate-200 hover:text-slate-50;
+  @apply flex w-full items-center justify-between py-2 text-sm outline-none duration-300 ease-in-out text-slate-200 hover:text-slate-50;
 }
 
 .main-sidebar-panel-body .submenu-link {
-  @apply flex items-center justify-between p-2 text-sm tracking-wide outline-none duration-300 ease-in-out hover:pl-4 text-slate-200 hover:text-slate-50;
+  @apply flex items-center justify-between p-2 text-sm  outline-none duration-300 ease-in-out hover:pl-4 text-slate-200 hover:text-slate-50;
 }
 </style>
