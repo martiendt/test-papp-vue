@@ -5,12 +5,10 @@ import router from './router'
 import FaIcon from '@/global-components/fa-icon.vue'
 import './assets/css/main.css'
 
-const pinia = createPinia()
 const app = createApp(mainApp)
 
-app.use(createPinia())
 app.use(router)
-app.use(pinia)
+app.use(createPinia())
 // register global component
 app.component('FaIcon', FaIcon)
 // mount vue application

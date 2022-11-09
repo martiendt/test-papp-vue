@@ -3,11 +3,11 @@ export const routes = {
   component: () => import('@/layouts/app-layout.vue'),
   children: [
     {
-      path: '/',
-      component: () => import('./main-index.vue'),
+      path: '',
+      component: () => import('./module-index.vue'),
       children: [
         {
-          path: '/',
+          path: '',
           component: () => import('./views/home-page.vue'),
         },
       ],

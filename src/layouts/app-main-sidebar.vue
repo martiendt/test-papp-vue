@@ -1,6 +1,6 @@
 <template>
   <!-- Sidebar -->
-  <div class="main-sidebar print:hidden">
+  <div class="main-sidebar">
     <!-- Main Sidebar -->
     <div class="main-sidebar-shortcut" :class="{ 'delay-200 duration-200': !mainSidebarStore.isSidebarOpen }">
       <div class="main-sidebar-shortcut-container">
@@ -10,11 +10,14 @@
           </router-link>
         </div>
         <div class="main-sidebar-shortcut-body">
-          <router-link to="#" class="main-sidebar-shortcut-link">
-            <fa-icon icon="fa-solid fa-house w-6 h-6" />
-          </router-link>
-          <router-link to="#" class="main-sidebar-shortcut-link">
-            <fa-icon icon="fa-regular fa-wand-magic-sparkles w-6 h-6" />
+          <router-link
+            v-for="shortcut in sideMenu.shortcut"
+            :key="shortcut.icon"
+            :to="shortcut.path"
+            class="main-sidebar-shortcut-link"
+            @click="activeShortcut = shortcut"
+          >
+            <fa-icon :icon="shortcut.icon + ' w-6 h-6'" />
           </router-link>
         </div>
       </div>
@@ -32,9 +35,9 @@
         <!-- Sidebar Panel Body -->
         <div class="main-sidebar-panel-body">
           <ul class="flex flex-1 flex-col px-4">
-            <li v-for="menu in sideMenuPanelStore.menu" :key="menu.title">
+            <li v-for="menu in activeShortcut.menu" :key="menu.name">
               <button class="menu-link-button" @click="menu.active = !menu.active">
-                <span>{{ menu.title }}</span>
+                <span>{{ menu.name }}</span>
                 <fa-icon
                   v-if="menu.subMenu"
                   icon="fa-solid fa-angle-right "
@@ -49,11 +52,11 @@
                     'max-h-0 overflow-hidden': !menu.active,
                   }"
                 >
-                  <li v-for="subMenu in menu.subMenu" :key="subMenu.title" class="overflow-hidden">
-                    <router-link to="#" class="submenu-link">
+                  <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
+                    <router-link :to="subMenu.path" class="submenu-link">
                       <div class="flex items-center space-x-2">
                         <div class="bullet-list"></div>
-                        <span>{{ subMenu.title }}</span>
+                        <span>{{ subMenu.name }}</span>
                       </div>
                     </router-link>
                   </li>
@@ -69,15 +72,18 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 import { useMainSidebarStore } from '@/stores/main-sidebar'
 import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
-import { useSideMenuPanelStore } from '@/stores/side-menu-panel'
+import { useSideMenuStore } from '@/stores/side-menu'
 import { onMounted } from 'vue'
 
 const screenBreakpointStore = useScreenBreakpointStore()
-const sideMenuPanelStore = useSideMenuPanelStore()
+const sideMenu = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
+
+const activeShortcut = ref(sideMenu.shortcut[0])
 
 /**
  * Set default open sidebar by breakpoint
