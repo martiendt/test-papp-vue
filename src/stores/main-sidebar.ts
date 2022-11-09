@@ -8,12 +8,18 @@ export const useMainSidebarStore = defineStore('main-sidebar', {
     toggleSidebar() {
       this.isSidebarOpen = document.body.classList.contains('is-sidebar-open')
       if (this.isSidebarOpen) {
-        document.body.classList.remove('is-sidebar-open')
-        this.isSidebarOpen = false
+        this.closeSidebar()
       } else {
-        document.body.classList.add('is-sidebar-open')
-        this.isSidebarOpen = true
+        this.openSidebar()
       }
+    },
+    openSidebar() {
+      document.body.classList.add('is-sidebar-open')
+      this.isSidebarOpen = true
+    },
+    closeSidebar() {
+      document.body.classList.remove('is-sidebar-open')
+      this.isSidebarOpen = false
     },
   },
 })

@@ -2,7 +2,7 @@
   <!-- Sidebar -->
   <div class="main-sidebar print:hidden">
     <!-- Main Sidebar -->
-    <div class="main-sidebar-shortcut">
+    <div class="main-sidebar-shortcut" :class="{ 'delay-200 duration-200': !mainSidebarStore.isSidebarOpen }">
       <div class="main-sidebar-shortcut-container">
         <div class="flex pt-4">
           <router-link to="/">
@@ -26,7 +26,7 @@
         <!-- Sidebar Panel Header -->
         <div class="main-sidebar-panel-header">
           <p class="text-base tracking-wider text-slate-100">Templates</p>
-          <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" />
+          <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" class="px-2" />
         </div>
 
         <!-- Sidebar Panel Body -->
@@ -70,11 +70,35 @@
 
 <script setup lang="ts">
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
+import { useMainSidebarStore } from '@/stores/main-sidebar'
 import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
 import { useSideMenuPanelStore } from '@/stores/side-menu-panel'
+import { onMounted } from 'vue'
 
 const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenuPanelStore = useSideMenuPanelStore()
+const mainSidebarStore = useMainSidebarStore()
+
+/**
+ * Set default open sidebar by breakpoint
+ * sm, md, lg default is open sidebar
+ * xl and 2xl default is closed sidebar
+ */
+const setDefaultOpenSidebar = () => {
+  if (
+    screenBreakpointStore.screenBreakpoint === 'sm' ||
+    screenBreakpointStore.screenBreakpoint === 'md' ||
+    screenBreakpointStore.screenBreakpoint === 'lg'
+  ) {
+    mainSidebarStore.closeSidebar()
+  } else {
+    mainSidebarStore.openSidebar()
+  }
+}
+
+onMounted(() => {
+  setDefaultOpenSidebar()
+})
 </script>
 
 <style lang="postcss" scoped>
@@ -99,7 +123,7 @@ const sideMenuPanelStore = useSideMenuPanelStore()
 }
 
 .is-sidebar-open .main-sidebar-shortcut {
-  @apply translate-x-0;
+  @apply translate-x-0 ease-out;
 }
 
 .main-sidebar-shortcut-link {

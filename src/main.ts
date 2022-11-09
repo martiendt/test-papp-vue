@@ -2,8 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import mainApp from './main-app.vue'
 import router from './router'
-import FaIcon from '@/components/fa-icon.vue'
-
+import FaIcon from '@/global-components/fa-icon.vue'
 import './assets/css/main.css'
 
 const pinia = createPinia()
