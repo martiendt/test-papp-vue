@@ -1,19 +1,20 @@
 import { defineStore } from 'pinia'
 
-interface ShortcutInterface {
+export interface ShortcutInterface {
   icon: string
   name: string
   path: string
   menu: Array<MenuInterface>
   active?: boolean
 }
-interface MenuInterface {
+export interface MenuInterface {
   name: string
-  path?: string
+  separator?: boolean
+  path: string
   subMenu?: Array<SubMenuInterface>
   active?: boolean
 }
-interface SubMenuInterface {
+export interface SubMenuInterface {
   name: string
   path: string
   active?: boolean
@@ -48,6 +49,7 @@ const menuTemplate = {
   menu: [
     {
       name: 'Element',
+      path: '#',
       active: false,
       subMenu: [
         {

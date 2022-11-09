@@ -1,7 +1,7 @@
 <template>
-  <!-- Sidebar -->
+  <!-- Main Sidebar -->
   <div class="main-sidebar">
-    <!-- Main Sidebar -->
+    <!-- Sidebar Shortcut -->
     <div class="main-sidebar-shortcut" :class="{ 'delay-200 duration-200': !mainSidebarStore.isSidebarOpen }">
       <div class="main-sidebar-shortcut-container">
         <div class="flex pt-4">
@@ -15,7 +15,8 @@
             :key="shortcut.icon"
             :to="shortcut.path"
             class="main-sidebar-shortcut-link"
-            @click="activeShortcut = shortcut"
+            :class="{ 'bg-slate-500/20': shortcut.active }"
+            @click="onClickShortcut(shortcut)"
           >
             <fa-icon :icon="shortcut.icon + ' w-6 h-6'" />
           </router-link>
@@ -36,14 +37,14 @@
         <div class="main-sidebar-panel-body">
           <ul class="flex flex-1 flex-col px-4">
             <li v-for="menu in activeShortcut.menu" :key="menu.name">
-              <button class="menu-link-button" @click="menu.active = !menu.active">
-                <span>{{ menu.name }}</span>
+              <router-link :to="menu.path" class="menu-link-button" @click="onClickMenu(menu)">
+                <span :class="{ 'text-white': menu.active }">{{ menu.name }}</span>
                 <fa-icon
                   v-if="menu.subMenu"
                   icon="fa-solid fa-angle-right "
-                  :class="{ 'rotate-90 transition transform-gpu': menu.active }"
-                ></fa-icon>
-              </button>
+                  :class="{ 'rotate-90 transition transform-gpu ': menu.active }"
+                />
+              </router-link>
               <div v-if="menu.subMenu && menu.subMenu.length > 0">
                 <ul
                   class="transition-all transform-gpu"
@@ -53,10 +54,10 @@
                   }"
                 >
                   <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
-                    <router-link :to="subMenu.path" class="submenu-link">
+                    <router-link :to="subMenu.path" class="submenu-link" @click="onClickSubMenu(subMenu)">
                       <div class="flex items-center space-x-2">
                         <div class="bullet-list"></div>
-                        <span>{{ subMenu.name }}</span>
+                        <span :class="{ 'text-white': subMenu.active }">{{ subMenu.name }}</span>
                       </div>
                     </router-link>
                   </li>
@@ -77,13 +78,51 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 import { useMainSidebarStore } from '@/stores/main-sidebar'
 import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
 import { useSideMenuStore } from '@/stores/side-menu'
+import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/side-menu'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenu = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 
-const activeShortcut = ref(sideMenu.shortcut[0])
+const updateActiveMenu = (items: ShortcutInterface[] | MenuInterface[] | SubMenuInterface[], path: string) => {
+  items.forEach((item) => {
+    if (item.menu) {
+      if (updateActiveMenu(item.menu, path)) {
+        item.active = true
+        return item
+      }
+    }
+    if (item.subMenu) {
+      if (updateActiveMenu(item.subMenu, path)) {
+        item.active = true
+        return item
+      }
+    }
+    if (item.path === path) {
+      item.active = true
+      return item
+    }
+
+    return
+  })
+}
+
+const activeShortcut = ref<ShortcutInterface>(updateActiveMenu(sideMenu.shortcut, route.path))
+
+const onClickShortcut = (shortcut: ShortcutInterface) => {
+  activeShortcut.value = shortcut
+}
+
+const onClickMenu = (menu: MenuInterface) => {
+  menu.active = !menu.active
+}
+
+const onClickSubMenu = (subMenu: SubMenuInterface) => {
+  subMenu.active = !subMenu.active
+}
 
 /**
  * Set default open sidebar by breakpoint
