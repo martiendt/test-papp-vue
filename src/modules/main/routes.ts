@@ -8,7 +8,7 @@ export const routes = {
       children: [
         {
           path: '',
-          component: () => import('./views/home-page.vue'),
+          component: () => import('./views/main-dashboard.vue'),
         },
       ],
     },

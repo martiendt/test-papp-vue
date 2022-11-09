@@ -28,7 +28,7 @@
       <div class="main-sidebar-panel-container">
         <!-- Sidebar Panel Header -->
         <div class="main-sidebar-panel-header">
-          <p class="text-base tracking-wider text-slate-100">Templates</p>
+          <p class="text-base tracking-wider text-slate-100">{{ activeShortcut.name }}</p>
           <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" class="px-2" />
         </div>
 

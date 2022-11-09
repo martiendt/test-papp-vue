@@ -31,11 +31,11 @@ export const useSideMenuStore = defineStore('side-menu', {
 
 const menuHome = {
   icon: 'fa-regular fa-house',
-  name: 'Home',
+  name: 'Main Menu',
   path: '/',
   menu: [
     {
-      name: 'Home',
+      name: 'Dashboard',
       path: '/',
     },
   ],
