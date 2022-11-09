@@ -38,6 +38,13 @@ export const useScreenBreakpointStore = defineStore('screen-breakpoint', {
           this.screenBreakpoint = el.breakpoint
           return false
         }
+
+        // maximum breakpoint is 2xl
+        if (this.windowWidth > 1536) {
+          this.screenBreakpoint = '2xl'
+          return false
+        }
+
         return true
       })
     },
