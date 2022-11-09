@@ -1,4 +1,4 @@
-@layer base {
+@layer components {
   .main-content {
     @apply mt-[60px] grid grid-cols-1 place-content-start transition-[width,margin-left,margin-right,padding-left,padding-right] duration-[.25s] ease-in print:m-0 md:ml-[var(--main-sidebar-width)];
   }

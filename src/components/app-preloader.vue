@@ -19,7 +19,7 @@ let loadingState: any
 onMounted(() => {
   hideBodyOverflow()
   loadingState = setInterval(() => {
-    loaded.value += 10
+    loaded.value += 20
     loadingText.value = `is loading ${loaded.value} %`
   }, 50)
 })
@@ -41,21 +41,3 @@ const showBodyOverflow = () => {
   document.body.style.overflow = ''
 }
 </script>
-
-<style lang="postcss" scoped>
-.preloader {
-  @apply w-full h-100vh flex flex-col justify-center items-center text-slate-50 bg-slate-900 relative;
-}
-.preloader-status {
-  @apply w-full flex flex-col justify-center items-center;
-}
-.preloader-status-text {
-  @apply text-[28px] mb-[20px];
-}
-.preloader-status-loader {
-  @apply w-full h-[3px];
-}
-.preloader-status-bar {
-  @apply bg-slate-300 h-full;
-}
-</style>

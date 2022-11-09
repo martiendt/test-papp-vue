@@ -1,1 +1,9 @@
-/* @import "./components/preloader.css"; */
+/* Component Layouts */
+@import "./component-layouts/app-header.css";
+@import "./component-layouts/app-main-sidebar.css";
+@import "./component-layouts/app-main-content.css";
+@import "./component-layouts/dark-mode.css";
+@import "./component-layouts/sidebar-toggle.css";
+
+/* Components */
+@import "./components/preloader.css";

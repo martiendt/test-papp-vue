@@ -1,4 +1,4 @@
-@layer base {
+@layer components {
   .darkmode-toggle svg {
     @apply origin-top animate-[linear_darkmode-btn_200ms_forwards];
   }
@@ -9,14 +9,5 @@
 
   .darkmode-toggle svg.darkmode-sun {
     @apply block dark:hidden;
-  }
-
-  @keyframes darkmode-btn {
-    from {
-      transform: scale(0.25);
-    }
-    to {
-      transform: scale(1);
-    }
   }
 }

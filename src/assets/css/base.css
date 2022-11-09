@@ -1,34 +1,3 @@
+@import "./base/root.css";
 @import "./base/basic-style.css";
 @import "./base/custom-scrollbar.css";
-@import "./base/dark-mode.css";
-@import "./base/main-content.css";
-@import "./base/sidebar-toggle.css";
-
-@layer base {
-  :root {
-    @apply [--main-sidebar-shortcut-width:4.5rem]
-      [--main-sidebar-panel-width:15rem]
-      [--ease-in:0.4,0,1,1]
-      [--ease-out:0,0,0.2,1]
-      [--ease-in-out:0.4,0,0.2,1];
-    /* @apply [--margin-x:1rem]
-    [--main-sidebar-width:4.5rem]
-    [--sidebar-panel-width:230px]
-    [--sidebar-panel-min-width:64px]
-    [--ease-in:0.4,0,1,1]
-    [--ease-out:0,0,0.2,1]
-    [--ease-in-out:0.4,0,0.2,1]
-    md:[--margin-x:1.5rem]
-    lg:[--main-sidebar-width:5rem]
-    lg:[--sidebar-panel-width:240px]
-    xl:[--margin-x:4rem]; */
-  }
-
-  .has-min-sidebar {
-    /* @apply xl:mx-[2.5rem]; */
-  }
-
-  .is-sidebar-open {
-    /* @apply lg:mx-[15rem]; */
-  }
-}

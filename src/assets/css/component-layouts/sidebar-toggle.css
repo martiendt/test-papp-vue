@@ -1,4 +1,4 @@
-@layer base {
+@layer components {
   .is-sidebar-open .sidebar-toggle span {
     @apply ml-2 w-[11px] -translate-x-2;
   }
