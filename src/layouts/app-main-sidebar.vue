@@ -87,30 +87,44 @@ const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenu = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 
-const updateActiveMenu = (items: ShortcutInterface[] | MenuInterface[] | SubMenuInterface[], path: string) => {
-  items.forEach((item) => {
-    if (item.menu) {
-      if (updateActiveMenu(item.menu, path)) {
-        item.active = true
-        return item
-      }
+const updateActiveShortcut = (items: ShortcutInterface[], path: string): ShortcutInterface | undefined => {
+  for (let item of items) {
+    if (item.menu && updateActiveMenu(item.menu, path)) {
+      item.active = true
+      return item
+    } else {
+      item.active = false
     }
-    if (item.subMenu) {
-      if (updateActiveMenu(item.subMenu, path)) {
-        item.active = true
-        return item
-      }
+  }
+}
+
+const updateActiveMenu = (items: MenuInterface[], path: string): MenuInterface | undefined => {
+  for (let item of items) {
+    if (item.subMenu !== undefined && updateActiveSubMenu(item.subMenu, path)) {
+      item.active = true
+      return item.subMenu !== undefined ? item : undefined
+    } else {
+      item.active = false
     }
+  }
+}
+
+const updateActiveSubMenu = (items: SubMenuInterface[], path: string): SubMenuInterface | undefined => {
+  for (let item of items) {
     if (item.path === path) {
       item.active = true
       return item
+    } else {
+      item.active = false
     }
-
-    return
-  })
+  }
 }
 
-const activeShortcut = ref<ShortcutInterface>(updateActiveMenu(sideMenu.shortcut, route.path))
+const activeShortcut = ref(updateActiveShortcut(sideMenu.shortcut, route.path))
+
+if (activeShortcut.value == undefined) {
+  activeShortcut.value = sideMenu.shortcut[0]
+}
 
 const onClickShortcut = (shortcut: ShortcutInterface) => {
   activeShortcut.value = shortcut
