@@ -21,8 +21,10 @@
             <fa-icon :icon="shortcut.icon + ' w-6 h-6'" />
           </router-link>
         </div>
+        setTimeout(() =
       </div>
     </div>
+    > {}, 1000)
 
     <!-- Sidebar Panel -->
     <div class="main-sidebar-panel">
@@ -56,7 +58,7 @@
                   <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
                     <router-link :to="subMenu.path" class="submenu-link" @click="onClickSubMenu(subMenu)">
                       <div class="flex items-center space-x-2">
-                        <div class="bullet-list"></div>
+                        <div class="bullet-list" :class="{ 'bg-white': subMenu.active }"></div>
                         <span :class="{ 'text-white': subMenu.active, 'text-slate-100/80': !subMenu.active }">{{
                           subMenu.name
                         }}</span>
@@ -75,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 import { useMainSidebarStore } from '@/stores/main-sidebar'
 import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
@@ -92,6 +94,7 @@ const mainSidebarStore = useMainSidebarStore()
 const updateActiveShortcut = (items: ShortcutInterface[], path: string): ShortcutInterface | undefined => {
   for (let item of items) {
     item.active = false
+    console.log(item)
     if (item.menu && updateActiveMenu(item.menu, path)) {
       item.active = true
       return item
@@ -124,14 +127,20 @@ const updateActiveSubMenu = (items: SubMenuInterface[], path: string): SubMenuIn
   }
 }
 
-const clearActiveMenu = (): void => {
+const clearActiveMenu = (level: number): void => {
   for (let shortcut of sideMenu.shortcut) {
-    shortcut.active = false
+    if (level === 1) {
+      shortcut.active = false
+    }
     for (let menu of shortcut.menu) {
-      menu.active = false
+      if (level <= 2 || (level <= 3 && !menu.subMenu)) {
+        menu.active = false
+      }
       if (menu.subMenu) {
         for (let subMenu of menu.subMenu) {
-          subMenu.active = false
+          if (level <= 3) {
+            subMenu.active = false
+          }
         }
       }
     }
@@ -144,19 +153,27 @@ if (activeShortcut.value === undefined) {
   activeShortcut.value = sideMenu.shortcut[0]
 }
 
-const onClickShortcut = (shortcut: ShortcutInterface) => {
-  clearActiveMenu()
+watch(route, async () => {
+  updateActiveShortcut(sideMenu.shortcut, route.path)
+})
+
+const onClickShortcut = async (shortcut: ShortcutInterface) => {
+  clearActiveMenu(1)
   shortcut.active = true
   activeShortcut.value = shortcut
 }
 
 const onClickMenu = (menu: MenuInterface) => {
-  clearActiveMenu()
-  menu.active = true
+  if (menu.subMenu === undefined) {
+    clearActiveMenu(2)
+    menu.active = true
+  } else {
+    menu.active = !menu.active
+  }
 }
 
 const onClickSubMenu = (subMenu: SubMenuInterface) => {
-  clearActiveMenu()
+  clearActiveMenu(3)
   subMenu.active = true
 }
 

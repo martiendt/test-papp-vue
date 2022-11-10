@@ -36,16 +36,8 @@ const menuHome = {
   path: '/',
   menu: [
     {
-      name: 'Index',
-      path: '/about',
-    },
-    {
       name: 'Dashboard',
       path: '/',
-    },
-    {
-      name: 'About',
-      path: '/about',
     },
   ],
 }
@@ -67,6 +59,25 @@ const menuTemplate = {
         {
           name: 'Element Button',
           path: '/template/element-button',
+        },
+      ],
+    },
+    {
+      name: 'About',
+      path: '/',
+    },
+    {
+      name: 'Element2',
+      path: '#',
+      active: false,
+      subMenu: [
+        {
+          name: 'Element2 Badge',
+          path: '/',
+        },
+        {
+          name: 'Element2 Button',
+          path: '/',
         },
       ],
     },
