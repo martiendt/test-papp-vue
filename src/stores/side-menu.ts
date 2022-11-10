@@ -36,8 +36,16 @@ const menuHome = {
   path: '/',
   menu: [
     {
+      name: 'Index',
+      path: '/about',
+    },
+    {
       name: 'Dashboard',
       path: '/',
+    },
+    {
+      name: 'About',
+      path: '/about',
     },
   ],
 }
