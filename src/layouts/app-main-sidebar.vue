@@ -11,20 +11,18 @@
         </div>
         <div class="main-sidebar-shortcut-body">
           <router-link
-            v-for="shortcut in sideMenu.shortcut"
+            v-for="shortcut in sideMenuStore.shortcut"
             :key="shortcut.icon"
             :to="shortcut.path"
             class="main-sidebar-shortcut-link"
-            :class="{ 'bg-slate-300/20': shortcut.active }"
+            :class="{ 'bg-slate-300/20': route.meta.shortcut === shortcut.code }"
             @click="onClickShortcut(shortcut)"
           >
             <fa-icon :icon="shortcut.icon + ' w-6 h-6'" />
           </router-link>
         </div>
-        setTimeout(() =
       </div>
     </div>
-    > {}, 1000)
 
     <!-- Sidebar Panel -->
     <div class="main-sidebar-panel">
@@ -40,11 +38,18 @@
           <ul class="flex flex-1 flex-col px-4">
             <li v-for="menu in activeShortcut.menu" :key="menu.name">
               <router-link :to="menu.path" class="menu-link-button" @click="onClickMenu(menu)">
-                <span :class="{ 'text-white': menu.active, 'text-slate-100/80': !menu.active }">{{ menu.name }}</span>
+                <span
+                  :class="{
+                    'text-white': route.meta.menu === menu.code,
+                    'text-slate-100/80': route.meta.menu !== menu.code,
+                  }"
+                >
+                  {{ menu.name }}
+                </span>
                 <fa-icon
                   v-if="menu.subMenu"
                   icon="fa-solid fa-angle-right "
-                  :class="{ 'rotate-90 transition transform-gpu ': menu.active }"
+                  :class="{ 'rotate-90 transition transform-gpu ': route.meta.menu === menu.code }"
                 />
               </router-link>
               <div v-if="menu.subMenu && menu.subMenu.length > 0">
@@ -58,10 +63,14 @@
                   <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
                     <router-link :to="subMenu.path" class="submenu-link" @click="onClickSubMenu(subMenu)">
                       <div class="flex items-center space-x-2">
-                        <div class="bullet-list" :class="{ 'bg-white': subMenu.active }"></div>
-                        <span :class="{ 'text-white': subMenu.active, 'text-slate-100/80': !subMenu.active }">{{
-                          subMenu.name
-                        }}</span>
+                        <div class="bullet-list" :class="{ 'bg-white': route.meta.subMenu === subMenu.code }"></div>
+                        <span
+                          :class="{
+                            'text-white': route.meta.subMenu === subMenu.code,
+                            'text-slate-100/80': route.meta.subMenu !== subMenu.code,
+                          }"
+                          >{{ subMenu.name }}</span
+                        >
                       </div>
                     </router-link>
                   </li>
@@ -88,13 +97,12 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const screenBreakpointStore = useScreenBreakpointStore()
-const sideMenu = useSideMenuStore()
+const sideMenuStore = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 
 const updateActiveShortcut = (items: ShortcutInterface[], path: string): ShortcutInterface | undefined => {
   for (let item of items) {
     item.active = false
-    console.log(item)
     if (item.menu && updateActiveMenu(item.menu, path)) {
       item.active = true
       return item
@@ -104,7 +112,10 @@ const updateActiveShortcut = (items: ShortcutInterface[], path: string): Shortcu
 
 const updateActiveMenu = (items: MenuInterface[], path: string): MenuInterface | undefined => {
   for (let item of items) {
-    item.active = false
+    if (item.subMenu === undefined) {
+      item.active = false
+    }
+
     if (item.subMenu !== undefined && updateActiveSubMenu(item.subMenu, path)) {
       item.active = true
       return item.subMenu !== undefined ? item : undefined
@@ -128,7 +139,7 @@ const updateActiveSubMenu = (items: SubMenuInterface[], path: string): SubMenuIn
 }
 
 const clearActiveMenu = (level: number): void => {
-  for (let shortcut of sideMenu.shortcut) {
+  for (let shortcut of sideMenuStore.shortcut) {
     if (level === 1) {
       shortcut.active = false
     }
@@ -147,25 +158,26 @@ const clearActiveMenu = (level: number): void => {
   }
 }
 
-const activeShortcut = ref(updateActiveShortcut(sideMenu.shortcut, route.path))
+const activeShortcut = ref<ShortcutInterface>(updateActiveShortcut(sideMenuStore.shortcut, route.path))
 
 if (activeShortcut.value === undefined) {
-  activeShortcut.value = sideMenu.shortcut[0]
+  activeShortcut.value = sideMenuStore.shortcut[0]
 }
 
 watch(route, async () => {
-  updateActiveShortcut(sideMenu.shortcut, route.path)
+  updateActiveShortcut(sideMenuStore.shortcut, route.path)
 })
 
 const onClickShortcut = async (shortcut: ShortcutInterface) => {
-  clearActiveMenu(1)
-  shortcut.active = true
+  // clearActiveMenu(1)
+  // console.log(route.path)
+  // shortcut.active = true
   activeShortcut.value = shortcut
 }
 
 const onClickMenu = (menu: MenuInterface) => {
   if (menu.subMenu === undefined) {
-    clearActiveMenu(2)
+    // clearActiveMenu(2)
     menu.active = true
   } else {
     menu.active = !menu.active
@@ -173,7 +185,8 @@ const onClickMenu = (menu: MenuInterface) => {
 }
 
 const onClickSubMenu = (subMenu: SubMenuInterface) => {
-  clearActiveMenu(3)
+  // clearActiveMenu(3)
+  // console.log(route.path)
   subMenu.active = true
 }
 

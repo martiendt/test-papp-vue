@@ -7,6 +7,8 @@ import './assets/css/main.css'
 
 const app = createApp(mainApp)
 
+console.log(router.getRoutes())
+
 app.use(router)
 app.use(createPinia())
 // register global component

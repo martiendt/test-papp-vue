@@ -1,20 +1,23 @@
 import { defineStore } from 'pinia'
 
 export interface ShortcutInterface {
-  icon: string
+  code: string
   name: string
   path: string
+  icon: string
   menu: Array<MenuInterface>
   active?: boolean
 }
 export interface MenuInterface {
+  code: string
   name: string
-  separator?: boolean
   path: string
+  separator?: boolean
   subMenu?: Array<SubMenuInterface>
   active?: boolean
 }
 export interface SubMenuInterface {
+  code: string
   name: string
   path: string
   active?: boolean
@@ -26,16 +29,18 @@ interface StateInterface {
 
 export const useSideMenuStore = defineStore('side-menu', {
   state: (): StateInterface => ({
-    shortcut: [menuHome, menuTemplate],
+    shortcut: [menuMain, menuTemplate],
   }),
 })
 
-const menuHome = {
-  icon: 'fa-regular fa-house',
+const menuMain = {
+  code: 'main',
   name: 'Main Menu',
   path: '/',
+  icon: 'fa-regular fa-house',
   menu: [
     {
+      code: 'dashboard',
       name: 'Dashboard',
       path: '/',
     },
@@ -43,41 +48,39 @@ const menuHome = {
 }
 
 const menuTemplate = {
-  icon: 'fa-regular fa-wand-magic-sparkles',
+  code: 'template',
   name: 'Template',
   path: '/template/element-badge',
+  icon: 'fa-regular fa-wand-magic-sparkles',
   menu: [
     {
+      code: 'element',
       name: 'Element',
       path: '#',
       active: false,
       subMenu: [
         {
+          code: 'element-badge',
           name: 'Element Badge',
           path: '/template/element-badge',
         },
         {
+          code: 'element-button',
           name: 'Element Button',
           path: '/template/element-button',
         },
       ],
     },
     {
-      name: 'About',
-      path: '/',
-    },
-    {
-      name: 'Element2',
+      code: 'component',
+      name: 'Component',
       path: '#',
       active: false,
       subMenu: [
         {
-          name: 'Element2 Badge',
-          path: '/',
-        },
-        {
-          name: 'Element2 Button',
-          path: '/',
+          code: 'component-accordion',
+          name: 'Component Accordion',
+          path: '/template/component-accordion',
         },
       ],
     },
