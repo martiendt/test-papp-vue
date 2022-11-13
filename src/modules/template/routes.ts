@@ -6,7 +6,7 @@ export const routes = {
   },
   children: [
     {
-      path: '',
+      path: 'element',
       component: () => import('./module-index.vue'),
       meta: {
         shortcut: 'template',
@@ -43,7 +43,7 @@ export const routes = {
       ],
     },
     {
-      path: '',
+      path: 'component',
       component: () => import('./module-index.vue'),
       meta: {
         shortcut: 'template',

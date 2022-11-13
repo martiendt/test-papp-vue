@@ -1,25 +1,25 @@
 import { defineStore } from 'pinia'
 
 export interface ShortcutInterface {
-  code: string
   name: string
   path: string
+  meta: string
   icon: string
   menu: Array<MenuInterface>
   active?: boolean
 }
 export interface MenuInterface {
-  code: string
   name: string
   path: string
+  meta: string
   separator?: boolean
   subMenu?: Array<SubMenuInterface>
   active?: boolean
 }
 export interface SubMenuInterface {
-  code: string
   name: string
   path: string
+  meta: string
   active?: boolean
 }
 
@@ -34,53 +34,53 @@ export const useSideMenuStore = defineStore('side-menu', {
 })
 
 const menuMain = {
-  code: 'main',
   name: 'Main Menu',
   path: '/',
+  meta: 'main',
   icon: 'fa-regular fa-house',
   menu: [
     {
-      code: 'dashboard',
       name: 'Dashboard',
       path: '/',
+      meta: 'dashboard',
     },
   ],
 }
 
 const menuTemplate = {
-  code: 'template',
   name: 'Template',
-  path: '/template/element-badge',
+  path: '/template',
+  meta: 'template',
   icon: 'fa-regular fa-wand-magic-sparkles',
   menu: [
     {
-      code: 'element',
       name: 'Element',
-      path: '#',
+      path: 'element',
+      meta: 'element',
       active: false,
       subMenu: [
         {
-          code: 'element-badge',
           name: 'Element Badge',
-          path: '/template/element-badge',
+          path: '/template/element/element-badge',
+          meta: 'element-badge',
         },
         {
-          code: 'element-button',
           name: 'Element Button',
-          path: '/template/element-button',
+          path: '/template/element/element-button',
+          meta: 'element-button',
         },
       ],
     },
     {
-      code: 'component',
       name: 'Component',
-      path: '#',
+      path: 'component',
+      meta: 'component',
       active: false,
       subMenu: [
         {
-          code: 'component-accordion',
           name: 'Component Accordion',
-          path: '/template/component-accordion',
+          path: '/template/component/component-accordion',
+          meta: 'component-accordion',
         },
       ],
     },
