@@ -2,7 +2,7 @@
   <!-- Main Sidebar -->
   <div class="main-sidebar">
     <!-- Sidebar Shortcut -->
-    <div class="main-sidebar-shortcut" :class="{ 'delay-200 duration-200': !mainSidebarStore.isSidebarOpen }">
+    <div class="main-sidebar-shortcut" :class="{ 'delay-100 duration-200': !mainSidebarStore.isSidebarOpen }">
       <div class="main-sidebar-shortcut-container">
         <div class="flex pt-4">
           <router-link to="/">
@@ -28,7 +28,9 @@
       <div class="main-sidebar-panel-container">
         <!-- Sidebar Panel Header -->
         <div class="main-sidebar-panel-header">
-          <p class="text-base tracking-wider text-slate-100">{{ activeShortcut.name }}</p>
+          <p class="text-base tracking-wider text-slate-100">
+            {{ activeShortcut.name }}
+          </p>
           <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" class="px-2" />
         </div>
 
@@ -41,8 +43,8 @@
                 v-if="menu.subMenu"
                 class="menu-link-button"
                 :class="{
-                  'text-white': route.meta.menu === menu.meta,
-                  'text-slate-100/80': route.meta.menu !== menu.meta,
+                  '!text-white': route.meta.menu === menu.meta,
+                  '!text-slate-100/80': route.meta.menu !== menu.meta,
                 }"
                 @click="onClickMenu(menu)"
               >
@@ -56,7 +58,7 @@
               <!-- MENU -->
               <router-link
                 v-else
-                :to="menu.path"
+                :to="menu.path as string"
                 class="menu-link-button"
                 :class="{
                   '!text-white': route.meta.menu === menu.meta,
@@ -114,10 +116,7 @@ const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenuStore = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 
-const setActiveShortcut = (
-  items: ShortcutInterface[],
-  route: RouteLocationNormalizedLoaded
-): ShortcutInterface | undefined => {
+const setActiveShortcut = (items: ShortcutInterface[], route: RouteLocationNormalizedLoaded): ShortcutInterface => {
   for (let item of items) {
     item.active = false
     if (item.menu && setActiveMenu(item.menu, route)) {
@@ -125,6 +124,8 @@ const setActiveShortcut = (
       return item
     }
   }
+
+  return items[0]
 }
 
 const setActiveMenu = (items: MenuInterface[], route: RouteLocationNormalizedLoaded): MenuInterface | undefined => {
@@ -158,14 +159,20 @@ const setActiveSubMenu = (
   }
 }
 
-const activeShortcut = ref<ShortcutInterface>(setActiveShortcut(sideMenuStore.shortcut, route))
+const activeShortcut = ref(setActiveShortcut(sideMenuStore.shortcut, route))
 
 if (activeShortcut.value === undefined) {
   activeShortcut.value = sideMenuStore.shortcut[0]
 }
 
 watch(route, async () => {
-  // activeShortcut.value = setActiveShortcut(sideMenuStore.shortcut, route)
+  if (
+    screenBreakpointStore.screenBreakpoint === 'sm' ||
+    screenBreakpointStore.screenBreakpoint === 'md' ||
+    screenBreakpointStore.screenBreakpoint === 'lg'
+  ) {
+    mainSidebarStore.closeSidebar()
+  }
 })
 
 const onClickShortcut = (shortcut: MenuInterface) => {

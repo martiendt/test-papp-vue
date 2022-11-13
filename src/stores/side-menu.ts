@@ -8,6 +8,7 @@ export interface ShortcutInterface {
   active?: boolean
   path?: string
 }
+
 export interface MenuInterface {
   name: string
   meta: string
@@ -16,6 +17,7 @@ export interface MenuInterface {
   separator?: boolean
   subMenu?: Array<SubMenuInterface>
 }
+
 export interface SubMenuInterface {
   name: string
   meta: string
@@ -54,7 +56,6 @@ const menuTemplate = {
     {
       name: 'Element',
       meta: 'element',
-      active: false,
       subMenu: [
         {
           name: 'Element Badge',
@@ -71,7 +72,6 @@ const menuTemplate = {
     {
       name: 'Component',
       meta: 'component',
-      active: false,
       subMenu: [
         {
           name: 'Component Accordion',
