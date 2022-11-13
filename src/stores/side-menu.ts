@@ -2,24 +2,24 @@ import { defineStore } from 'pinia'
 
 export interface ShortcutInterface {
   name: string
-  path: string
   meta: string
   icon: string
   menu: Array<MenuInterface>
   active?: boolean
+  path?: string
 }
 export interface MenuInterface {
   name: string
-  path: string
   meta: string
+  active?: boolean
+  path?: string
   separator?: boolean
   subMenu?: Array<SubMenuInterface>
-  active?: boolean
 }
 export interface SubMenuInterface {
   name: string
-  path: string
   meta: string
+  path: string
   active?: boolean
 }
 
@@ -35,7 +35,6 @@ export const useSideMenuStore = defineStore('side-menu', {
 
 const menuMain = {
   name: 'Main Menu',
-  path: '/',
   meta: 'main',
   icon: 'fa-regular fa-house',
   menu: [
@@ -49,13 +48,11 @@ const menuMain = {
 
 const menuTemplate = {
   name: 'Template',
-  path: '/template',
   meta: 'template',
   icon: 'fa-regular fa-wand-magic-sparkles',
   menu: [
     {
       name: 'Element',
-      path: 'element',
       meta: 'element',
       active: false,
       subMenu: [
@@ -73,7 +70,6 @@ const menuTemplate = {
     },
     {
       name: 'Component',
-      path: 'component',
       meta: 'component',
       active: false,
       subMenu: [

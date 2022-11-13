@@ -114,26 +114,26 @@ const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenuStore = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 
-const updateActiveShortcut = (
+const setActiveShortcut = (
   items: ShortcutInterface[],
   route: RouteLocationNormalizedLoaded
 ): ShortcutInterface | undefined => {
   for (let item of items) {
     item.active = false
-    if (item.menu && updateActiveMenu(item.menu, route)) {
+    if (item.menu && setActiveMenu(item.menu, route)) {
       item.active = true
       return item
     }
   }
 }
 
-const updateActiveMenu = (items: MenuInterface[], route: RouteLocationNormalizedLoaded): MenuInterface | undefined => {
+const setActiveMenu = (items: MenuInterface[], route: RouteLocationNormalizedLoaded): MenuInterface | undefined => {
   for (let item of items) {
     if (item.subMenu === undefined) {
       item.active = false
     }
 
-    if (item.subMenu !== undefined && updateActiveSubMenu(item.subMenu, route)) {
+    if (item.subMenu !== undefined && setActiveSubMenu(item.subMenu, route)) {
       item.active = true
       return item.subMenu !== undefined ? item : undefined
     }
@@ -145,7 +145,7 @@ const updateActiveMenu = (items: MenuInterface[], route: RouteLocationNormalized
   }
 }
 
-const updateActiveSubMenu = (
+const setActiveSubMenu = (
   items: SubMenuInterface[],
   route: RouteLocationNormalizedLoaded
 ): SubMenuInterface | undefined => {
@@ -158,14 +158,14 @@ const updateActiveSubMenu = (
   }
 }
 
-const activeShortcut = ref<ShortcutInterface>(updateActiveShortcut(sideMenuStore.shortcut, route))
+const activeShortcut = ref<ShortcutInterface>(setActiveShortcut(sideMenuStore.shortcut, route))
 
 if (activeShortcut.value === undefined) {
   activeShortcut.value = sideMenuStore.shortcut[0]
 }
 
 watch(route, async () => {
-  activeShortcut.value = updateActiveShortcut(sideMenuStore.shortcut, route)
+  // activeShortcut.value = setActiveShortcut(sideMenuStore.shortcut, route)
 })
 
 const onClickShortcut = (shortcut: MenuInterface) => {
