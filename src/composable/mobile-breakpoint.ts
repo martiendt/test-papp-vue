@@ -2,7 +2,7 @@ import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
 
 export function useMobileBreakpoint() {
   const screenBreakpointStore = useScreenBreakpointStore()
-  const isMobile = () => {
+  const isMobileBreakpoint = () => {
     if (
       screenBreakpointStore.screenBreakpoint === 'sm' ||
       screenBreakpointStore.screenBreakpoint === 'md' ||
@@ -13,5 +13,5 @@ export function useMobileBreakpoint() {
     return false
   }
 
-  return { isMobile }
+  return { isMobileBreakpoint }
 }

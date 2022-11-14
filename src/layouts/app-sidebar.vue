@@ -31,7 +31,7 @@
           <p class="text-base tracking-wider text-slate-100">
             {{ activeShortcut.name }}
           </p>
-          <component :is="ComponentToggleSidebar" v-if="isMobile()" class="px-2" />
+          <component :is="ComponentToggleSidebar" v-if="isMobileBreakpoint()" class="px-2" />
         </div>
 
         <!-- Sidebar Panel Body -->
@@ -112,6 +112,6 @@ import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 const route = useRoute()
 const sidebarMenuStore = useSidebarMenuStore()
 const sidebarStore = useSidebarStore()
-const { isMobile } = useMobileBreakpoint()
+const { isMobileBreakpoint } = useMobileBreakpoint()
 const { onClickShortcut, onClickMenu, activeShortcut } = useSidebar()
 </script>

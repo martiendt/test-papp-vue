@@ -10,7 +10,7 @@ export function useSidebar() {
   const sidebarStore = useSidebarStore()
   const sidebarMenuStore = useSidebarMenuStore()
   const route = useRoute()
-  const { isMobile } = useMobileBreakpoint()
+  const { isMobileBreakpoint } = useMobileBreakpoint()
 
   onMounted(() => {
     setDefaultOpenSidebar()
@@ -18,7 +18,7 @@ export function useSidebar() {
 
   // Close sidebar if change route in mobile
   watch(route, async () => {
-    if (isMobile()) {
+    if (isMobileBreakpoint()) {
       sidebarStore.closeSidebar()
     }
   })
@@ -29,7 +29,7 @@ export function useSidebar() {
    * xl and 2xl default sidebar is closed
    */
   const setDefaultOpenSidebar = () => {
-    if (isMobile()) {
+    if (isMobileBreakpoint()) {
       sidebarStore.closeSidebar()
     } else {
       sidebarStore.openSidebar()
