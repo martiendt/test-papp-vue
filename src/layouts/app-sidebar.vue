@@ -1,19 +1,19 @@
 <template>
   <!-- Main Sidebar -->
-  <div class="main-sidebar">
+  <div class="sidebar">
     <!-- Sidebar Shortcut -->
-    <div class="main-sidebar-shortcut" :class="{ 'delay-100 duration-200': !mainSidebarStore.isSidebarOpen }">
-      <div class="main-sidebar-shortcut-container">
+    <div class="sidebar-shortcut" :class="{ 'delay-100 duration-200': !sidebarStore.isSidebarOpen }">
+      <div class="sidebar-shortcut-container">
         <div class="flex pt-4">
           <router-link to="/">
-            <img class="main-sidebar-logo" src="@/assets/logo-icon.png" alt="logo" />
+            <img class="sidebar-logo" src="@/assets/logo-icon.png" alt="logo" />
           </router-link>
         </div>
-        <div class="main-sidebar-shortcut-body">
+        <div class="sidebar-shortcut-body">
           <button
-            v-for="shortcut in mainSidebarMenuStore.shortcut"
+            v-for="shortcut in sidebarMenuStore.shortcut"
             :key="shortcut.icon"
-            class="main-sidebar-shortcut-link"
+            class="sidebar-shortcut-link"
             :class="{ 'bg-slate-300/20': shortcut.active }"
             @click="onClickShortcut(shortcut)"
           >
@@ -24,10 +24,10 @@
     </div>
 
     <!-- Sidebar Panel -->
-    <div class="main-sidebar-panel">
-      <div class="main-sidebar-panel-container">
+    <div class="sidebar-panel">
+      <div class="sidebar-panel-container">
         <!-- Sidebar Panel Header -->
-        <div class="main-sidebar-panel-header">
+        <div class="sidebar-panel-header">
           <p class="text-base tracking-wider text-slate-100">
             {{ activeShortcut.name }}
           </p>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Sidebar Panel Body -->
-        <div class="main-sidebar-panel-body">
+        <div class="sidebar-panel-body">
           <ul class="flex flex-1 flex-col px-4">
             <li v-for="menu in activeShortcut.menu" :key="menu.name">
               <!-- Sub Menu Wrapper -->
@@ -103,15 +103,15 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { useMainSidebar } from '@/composable/main-sidebar'
-import { useMainSidebarStore } from '@/stores/main-sidebar'
-import { useMainSidebarMenuStore } from '@/stores/main-sidebar-menu'
+import { useSidebar } from '@/composable/sidebar'
+import { useSidebarStore } from '@/stores/sidebar'
+import { useSidebarMenuStore } from '@/stores/sidebar-menu'
 import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 const route = useRoute()
-const mainSidebarMenuStore = useMainSidebarMenuStore()
-const mainSidebarStore = useMainSidebarStore()
+const sidebarMenuStore = useSidebarMenuStore()
+const sidebarStore = useSidebarStore()
 const { isMobile } = useMobileBreakpoint()
-const { onClickShortcut, onClickMenu, activeShortcut } = useMainSidebar()
+const { onClickShortcut, onClickMenu, activeShortcut } = useSidebar()
 </script>

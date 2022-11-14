@@ -29,7 +29,7 @@ interface StateInterface {
   shortcut: Array<ShortcutInterface>
 }
 
-export const useMainSidebarMenuStore = defineStore('main-sidebar-menu', {
+export const useSidebarMenuStore = defineStore('sidebar-menu', {
   state: (): StateInterface => ({
     shortcut: [menuMain, menuTemplate],
   }),

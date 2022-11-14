@@ -1,14 +1,14 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/main-sidebar-menu'
+import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/sidebar-menu'
 import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { useMainSidebarStore } from '@/stores/main-sidebar'
-import { useMainSidebarMenuStore } from '@/stores/main-sidebar-menu'
+import { useSidebarStore } from '@/stores/sidebar'
+import { useSidebarMenuStore } from '@/stores/sidebar-menu'
 import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 
-export function useMainSidebar() {
-  const mainSidebarStore = useMainSidebarStore()
-  const mainSidebarMenuStore = useMainSidebarMenuStore()
+export function useSidebar() {
+  const sidebarStore = useSidebarStore()
+  const sidebarMenuStore = useSidebarMenuStore()
   const route = useRoute()
   const { isMobile } = useMobileBreakpoint()
 
@@ -19,7 +19,7 @@ export function useMainSidebar() {
   // Close sidebar if change route in mobile
   watch(route, async () => {
     if (isMobile()) {
-      mainSidebarStore.closeSidebar()
+      sidebarStore.closeSidebar()
     }
   })
 
@@ -30,14 +30,14 @@ export function useMainSidebar() {
    */
   const setDefaultOpenSidebar = () => {
     if (isMobile()) {
-      mainSidebarStore.closeSidebar()
+      sidebarStore.closeSidebar()
     } else {
-      mainSidebarStore.openSidebar()
+      sidebarStore.openSidebar()
     }
   }
 
   const onClickShortcut = (shortcut: MenuInterface) => {
-    for (const sideMenuShortcut of mainSidebarMenuStore.shortcut) {
+    for (const sideMenuShortcut of sidebarMenuStore.shortcut) {
       if (sideMenuShortcut.meta === shortcut.meta) {
         sideMenuShortcut.active = true
         activeShortcut.value = sideMenuShortcut
@@ -102,9 +102,9 @@ export function useMainSidebar() {
    * activeShortcut indicate which shortcut menu in sidebar is active,
    * if there is no active shortcut found, then first shortcut become active
    */
-  const activeShortcut = ref(setActiveShortcut(mainSidebarMenuStore.shortcut, route))
+  const activeShortcut = ref(setActiveShortcut(sidebarMenuStore.shortcut, route))
   if (activeShortcut.value === undefined) {
-    activeShortcut.value = mainSidebarMenuStore.shortcut[0]
+    activeShortcut.value = sidebarMenuStore.shortcut[0]
   }
 
   return { onClickShortcut, onClickMenu, activeShortcut }

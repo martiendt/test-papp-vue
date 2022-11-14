@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useMainSidebarStore = defineStore('main-sidebar', {
+export const useSidebarStore = defineStore('sidebar', {
   state: () => ({
     isSidebarOpen: document.body.classList.contains('is-sidebar-open'),
   }),

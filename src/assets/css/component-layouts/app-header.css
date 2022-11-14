@@ -4,6 +4,6 @@
   }
   
   .is-sidebar-open nav.header {
-    @apply lg:w-[calc(100%-(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width)))] lg:ml-[calc(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width))] duration-200;
+    @apply lg:w-[calc(100%-(var(--sidebar-shortcut-width)+var(--sidebar-panel-width)))] lg:ml-[calc(var(--sidebar-shortcut-width)+var(--sidebar-panel-width))] duration-200;
   }
 }

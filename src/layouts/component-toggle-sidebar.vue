@@ -1,20 +1,20 @@
 <template>
   <button @click="toggleSidebar()">
-    <div v-if="!mainSidebarStore.isSidebarOpen">
+    <div v-if="!sidebarStore.isSidebarOpen">
       <fa-icon icon="fa-solid fa-bars w-5 h-5"></fa-icon>
     </div>
-    <div v-if="mainSidebarStore.isSidebarOpen">
+    <div v-if="sidebarStore.isSidebarOpen">
       <fa-icon icon="fa-solid fa-xmark w-5 h-5"></fa-icon>
     </div>
   </button>
 </template>
 
 <script setup lang="ts">
-import { useMainSidebarStore } from '@/stores/main-sidebar'
+import { useSidebarStore } from '@/stores/sidebar'
 
-const mainSidebarStore = useMainSidebarStore()
+const sidebarStore = useSidebarStore()
 
 const toggleSidebar = () => {
-  mainSidebarStore.toggleSidebar()
+  sidebarStore.toggleSidebar()
 }
 </script>
