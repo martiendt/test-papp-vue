@@ -50,6 +50,10 @@
   .sidebar-panel-body .menu-separator {
     @apply my-3 h-px bg-slate-700;
   }
+  
+  .sidebar-panel-body .submenu-separator {
+    @apply my-1 h-px bg-slate-600;
+  }
 
   .sidebar-panel-body .bullet-list {
     @apply h-1.5 w-1.5 rounded-full border border-current opacity-40;

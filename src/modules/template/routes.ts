@@ -14,30 +14,30 @@ export const routes = {
       },
       children: [
         {
-          path: 'element-badge',
-          component: () => import('./views/element-badge.vue'),
+          path: 'badge',
+          component: () => import('./views/element/badge.vue'),
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'element-badge',
+            subMenu: 'badge',
           },
         },
         {
-          path: 'element-button',
-          component: () => import('./views/element-button.vue'),
+          path: 'button',
+          component: () => import('./views/element/button.vue'),
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'element-button',
+            subMenu: 'button',
           },
         },
         {
-          path: 'element-button/create',
-          component: () => import('./views/element-button-create.vue'),
+          path: 'button/create',
+          component: () => import('./views/element/button-create.vue'),
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'element-button',
+            subMenu: 'button',
           },
         },
       ],
@@ -51,12 +51,12 @@ export const routes = {
       },
       children: [
         {
-          path: 'component-accordion',
-          component: () => import('./views/component-accordion.vue'),
+          path: 'accordion',
+          component: () => import('./views/component/accordion.vue'),
           meta: {
             shortcut: 'template',
             menu: 'component',
-            subMenu: 'component-accordion',
+            subMenu: 'accordion',
           },
         },
       ],

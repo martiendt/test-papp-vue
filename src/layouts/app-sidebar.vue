@@ -71,7 +71,7 @@
                 <ul
                   class="transition-all transform-gpu"
                   :class="{
-                    'max-h-64 bg-slate-700 p-1 rounded-lg': menu.active,
+                    'max-h-[1000px] overflow-auto bg-slate-700 p-1 rounded-lg': menu.active,
                     'max-h-0 overflow-hidden': !menu.active,
                   }"
                 >
@@ -89,6 +89,7 @@
                         </span>
                       </div>
                     </router-link>
+                    <div v-if="subMenu.separator" class="submenu-separator"></div>
                   </li>
                 </ul>
               </div>
