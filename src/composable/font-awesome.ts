@@ -7,7 +7,6 @@ export function useFontAwesome() {
     script.src = source
     document.head.appendChild(script)
   }
-  
+
   appendScript(fontAwesomeKitUrl)
 }
-
