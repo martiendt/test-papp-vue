@@ -11,7 +11,7 @@
         </div>
         <div class="main-sidebar-shortcut-body">
           <button
-            v-for="shortcut in sideMenuStore.shortcut"
+            v-for="shortcut in mainSidebarMenuStore.shortcut"
             :key="shortcut.icon"
             class="main-sidebar-shortcut-link"
             :class="{ 'bg-slate-300/20': shortcut.active }"
@@ -110,7 +110,7 @@ import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 const route = useRoute()
-const sideMenuStore = useMainSidebarMenuStore()
+const mainSidebarMenuStore = useMainSidebarMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 const { isMobile } = useMobileBreakpoint()
 const { onClickShortcut, onClickMenu, activeShortcut } = useMainSidebar()

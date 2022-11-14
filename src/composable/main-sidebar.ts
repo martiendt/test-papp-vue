@@ -8,7 +8,7 @@ import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 
 export function useMainSidebar() {
   const mainSidebarStore = useMainSidebarStore()
-  const sideMenuStore = useMainSidebarMenuStore()
+  const mainSidebarMenuStore = useMainSidebarMenuStore()
   const route = useRoute()
   const { isMobile } = useMobileBreakpoint()
 
@@ -37,7 +37,7 @@ export function useMainSidebar() {
   }
 
   const onClickShortcut = (shortcut: MenuInterface) => {
-    for (const sideMenuShortcut of sideMenuStore.shortcut) {
+    for (const sideMenuShortcut of mainSidebarMenuStore.shortcut) {
       if (sideMenuShortcut.meta === shortcut.meta) {
         sideMenuShortcut.active = true
         activeShortcut.value = sideMenuShortcut
@@ -102,9 +102,9 @@ export function useMainSidebar() {
    * activeShortcut indicate which shortcut menu in sidebar is active,
    * if there is no active shortcut found, then first shortcut become active
    */
-  const activeShortcut = ref(setActiveShortcut(sideMenuStore.shortcut, route))
+  const activeShortcut = ref(setActiveShortcut(mainSidebarMenuStore.shortcut, route))
   if (activeShortcut.value === undefined) {
-    activeShortcut.value = sideMenuStore.shortcut[0]
+    activeShortcut.value = mainSidebarMenuStore.shortcut[0]
   }
 
   return { onClickShortcut, onClickMenu, activeShortcut }
