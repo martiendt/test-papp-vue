@@ -31,7 +31,7 @@
           <p class="text-base tracking-wider text-slate-100">
             {{ activeShortcut.name }}
           </p>
-          <component :is="ComponentToggleSidebar" v-if="screenBreakpointStore.windowWidth < 1024" class="px-2" />
+          <component :is="ComponentToggleSidebar" v-if="isMobile()" class="px-2" />
         </div>
 
         <!-- Sidebar Panel Body -->
@@ -102,116 +102,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import ComponentToggleSidebar from './component-toggle-sidebar.vue'
+import { useMainSidebar } from '@/composable/main-sidebar'
 import { useMainSidebarStore } from '@/stores/main-sidebar'
-import { useScreenBreakpointStore } from '@/stores/screen-breakpoint'
 import { useSideMenuStore } from '@/stores/side-menu'
-import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/side-menu'
-import { onMounted } from 'vue'
-import { useRoute, type RouteLocationNormalizedLoaded } from 'vue-router'
+import { useRoute } from 'vue-router'
+import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 
 const route = useRoute()
-const screenBreakpointStore = useScreenBreakpointStore()
 const sideMenuStore = useSideMenuStore()
 const mainSidebarStore = useMainSidebarStore()
-
-const setActiveShortcut = (items: ShortcutInterface[], route: RouteLocationNormalizedLoaded): ShortcutInterface => {
-  for (let item of items) {
-    item.active = false
-    if (item.menu && setActiveMenu(item.menu, route)) {
-      item.active = true
-      return item
-    }
-  }
-
-  return items[0]
-}
-
-const setActiveMenu = (items: MenuInterface[], route: RouteLocationNormalizedLoaded): MenuInterface | undefined => {
-  for (let item of items) {
-    if (item.subMenu === undefined) {
-      item.active = false
-    }
-
-    if (item.subMenu !== undefined && setActiveSubMenu(item.subMenu, route)) {
-      item.active = true
-      return item.subMenu !== undefined ? item : undefined
-    }
-
-    if (item.meta === route.meta.menu) {
-      item.active = true
-      return item
-    }
-  }
-}
-
-const setActiveSubMenu = (
-  items: SubMenuInterface[],
-  route: RouteLocationNormalizedLoaded
-): SubMenuInterface | undefined => {
-  for (let item of items) {
-    item.active = false
-    if (item.meta === route.meta.subMenu) {
-      item.active = true
-      return item
-    }
-  }
-}
-
-const activeShortcut = ref(setActiveShortcut(sideMenuStore.shortcut, route))
-
-if (activeShortcut.value === undefined) {
-  activeShortcut.value = sideMenuStore.shortcut[0]
-}
-
-watch(route, async () => {
-  if (
-    screenBreakpointStore.screenBreakpoint === 'sm' ||
-    screenBreakpointStore.screenBreakpoint === 'md' ||
-    screenBreakpointStore.screenBreakpoint === 'lg'
-  ) {
-    mainSidebarStore.closeSidebar()
-  }
-})
-
-const onClickShortcut = (shortcut: MenuInterface) => {
-  for (let sideMenuShortcut of sideMenuStore.shortcut) {
-    if (sideMenuShortcut.meta === shortcut.meta) {
-      sideMenuShortcut.active = true
-      activeShortcut.value = sideMenuShortcut
-    } else {
-      sideMenuShortcut.active = false
-    }
-  }
-}
-
-const onClickMenu = (menu: MenuInterface) => {
-  if (menu.subMenu === undefined) {
-    menu.active = true
-  } else {
-    menu.active = !menu.active
-  }
-}
-
-/**
- * Set default open sidebar by breakpoint
- * sm, md, lg default sidebar is open
- * xl and 2xl default sidebar is closed
- */
-const setDefaultOpenSidebar = () => {
-  if (
-    screenBreakpointStore.screenBreakpoint === 'sm' ||
-    screenBreakpointStore.screenBreakpoint === 'md' ||
-    screenBreakpointStore.screenBreakpoint === 'lg'
-  ) {
-    mainSidebarStore.closeSidebar()
-  } else {
-    mainSidebarStore.openSidebar()
-  }
-}
-
-onMounted(() => {
-  setDefaultOpenSidebar()
-})
+const { isMobile } = useMobileBreakpoint()
+const { onClickShortcut, onClickMenu, activeShortcut } = useMainSidebar()
 </script>

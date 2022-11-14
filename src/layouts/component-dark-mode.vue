@@ -10,8 +10,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
 const htmlTag = document.getElementsByTagName('html')[0]
-let isDarkMode = ref(htmlTag.classList.contains('dark'))
+const isDarkMode = ref(htmlTag.classList.contains('dark'))
 
 function toggleDarkMode() {
   if (htmlTag.classList.contains('dark')) {
