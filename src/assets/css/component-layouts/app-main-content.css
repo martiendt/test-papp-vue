@@ -1,13 +1,9 @@
 @layer components {
   .main-content {
-    @apply mt-[60px] grid grid-cols-1 place-content-start transition-[width,margin-left,margin-right,padding-left,padding-right] duration-[.25s] ease-in print:m-0 md:ml-[var(--main-sidebar-width)];
+    @apply mt-[60px] w-full lg:w-full px-8;
   }
-
-  .has-min-sidebar .main-content {
-    @apply md:ml-[calc(var(--main-sidebar-width)+var(--sidebar-panel-min-width))];
-  }
-
+  
   .is-sidebar-open .main-content {
-    @apply ease-out xl:ml-[calc(var(--main-sidebar-width)+var(--sidebar-panel-width))];
+    @apply w-full lg:w-[calc(100%-(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width)))] lg:ml-[calc(var(--main-sidebar-shortcut-width)+var(--main-sidebar-panel-width))];
   }
 }
