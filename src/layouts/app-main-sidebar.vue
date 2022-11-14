@@ -102,15 +102,15 @@
 </template>
 
 <script setup lang="ts">
-import ComponentToggleSidebar from './component-toggle-sidebar.vue'
+import { useRoute } from 'vue-router'
 import { useMainSidebar } from '@/composable/main-sidebar'
 import { useMainSidebarStore } from '@/stores/main-sidebar'
-import { useSideMenuStore } from '@/stores/side-menu'
-import { useRoute } from 'vue-router'
+import { useMainSidebarMenuStore } from '@/stores/main-sidebar-menu'
 import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
+import ComponentToggleSidebar from './component-toggle-sidebar.vue'
 
 const route = useRoute()
-const sideMenuStore = useSideMenuStore()
+const sideMenuStore = useMainSidebarMenuStore()
 const mainSidebarStore = useMainSidebarStore()
 const { isMobile } = useMobileBreakpoint()
 const { onClickShortcut, onClickMenu, activeShortcut } = useMainSidebar()

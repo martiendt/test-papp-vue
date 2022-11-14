@@ -1,15 +1,14 @@
-import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/side-menu'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import { onMounted } from 'vue'
-import { useMainSidebarStore } from '@/stores/main-sidebar'
-import { useSideMenuStore } from '@/stores/side-menu'
-import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
-import { ref, watch } from 'vue'
+import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/main-sidebar-menu'
+import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useMainSidebarStore } from '@/stores/main-sidebar'
+import { useMainSidebarMenuStore } from '@/stores/main-sidebar-menu'
+import { useMobileBreakpoint } from '@/composable/mobile-breakpoint'
 
 export function useMainSidebar() {
   const mainSidebarStore = useMainSidebarStore()
-  const sideMenuStore = useSideMenuStore()
+  const sideMenuStore = useMainSidebarMenuStore()
   const route = useRoute()
   const { isMobile } = useMobileBreakpoint()
 
@@ -17,6 +16,7 @@ export function useMainSidebar() {
     setDefaultOpenSidebar()
   })
 
+  // Close sidebar if change route in mobile
   watch(route, async () => {
     if (isMobile()) {
       mainSidebarStore.closeSidebar()
