@@ -6,39 +6,39 @@
     </div>
     <div class="grid grid-cols-2 gap-5">
       <div class="card p-4 space-y-5">
-        <h2 class="heading2">Basic Heading</h2>
+        <h2>Basic Heading</h2>
         <p>HTML headings are titles or subtitles that you want to display on a webpage.</p>
         <div class="space-y-3">
-          <h1 class="heading1">Heading 1</h1>
-          <h2 class="heading2">Heading 2</h2>
-          <h3 class="heading3">Heading 3</h3>
-          <h4 class="heading4">Heading 4</h4>
-          <h5 class="heading5">Heading 5</h5>
-          <h6 class="heading6">Heading 6</h6>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
         </div>
       </div>
       <div class="card p-4 space-y-5">
-        <h2 class="heading2">Light Heading</h2>
+        <h2>Light Heading</h2>
         <p>HTML headings are available with light variant.</p>
         <div class="space-y-3">
-          <h1 class="heading1 font-light">Heading 1</h1>
-          <h2 class="heading2 font-light">Heading 2</h2>
-          <h3 class="heading3 font-light">Heading 3</h3>
-          <h4 class="heading4 font-light">Heading 4</h4>
-          <h5 class="heading5 font-light">Heading 5</h5>
-          <h6 class="heading6 font-light">Heading 6</h6>
+          <h1 class="font-light">Heading 1</h1>
+          <h2 class="font-light">Heading 2</h2>
+          <h3 class="font-light">Heading 3</h3>
+          <h4 class="font-light">Heading 4</h4>
+          <h5 class="font-light">Heading 5</h5>
+          <h6 class="font-light">Heading 6</h6>
         </div>
       </div>
       <div class="card p-4 space-y-5">
-        <h2 class="heading2">Bold Heading</h2>
+        <h2>Bold Heading</h2>
         <p>HTML headings are available with light variant.</p>
         <div class="space-y-3">
-          <h1 class="heading1 font-bold">Heading 1</h1>
-          <h2 class="heading2 font-bold">Heading 2</h2>
-          <h3 class="heading3 font-bold">Heading 3</h3>
-          <h4 class="heading4 font-bold">Heading 4</h4>
-          <h5 class="heading5 font-bold">Heading 5</h5>
-          <h6 class="heading6 font-bold">Heading 6</h6>
+          <h1 class="font-bold">Heading 1</h1>
+          <h2 class="font-bold">Heading 2</h2>
+          <h3 class="font-bold">Heading 3</h3>
+          <h4 class="font-bold">Heading 4</h4>
+          <h5 class="font-bold">Heading 5</h5>
+          <h6 class="font-bold">Heading 6</h6>
         </div>
       </div>
     </div>

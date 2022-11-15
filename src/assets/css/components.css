@@ -8,4 +8,5 @@
 /* Components */
 @import "./components/button.css";
 @import "./components/card.css";
+@import "./components/form-switch.css";
 @import "./components/preloader.css";

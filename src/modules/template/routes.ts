@@ -14,6 +14,15 @@ export const routes = {
       },
       children: [
         {
+          path: 'avatar',
+          component: () => import('./views/element/avatar.vue'),
+          meta: {
+            shortcut: 'template',
+            menu: 'element',
+            submenu: 'avatar',
+          },
+        },
+        {
           path: 'badge',
           component: () => import('./views/element/badge.vue'),
           meta: {
@@ -66,6 +75,25 @@ export const routes = {
             shortcut: 'template',
             menu: 'component',
             submenu: 'accordion',
+          },
+        },
+      ],
+    },
+    {
+      path: 'form',
+      component: () => import('./module-index.vue'),
+      meta: {
+        shortcut: 'template',
+        menu: 'form',
+      },
+      children: [
+        {
+          path: 'switch',
+          component: () => import('./views/form/switch.vue'),
+          meta: {
+            shortcut: 'template',
+            menu: 'component',
+            submenu: 'switch',
           },
         },
       ],
