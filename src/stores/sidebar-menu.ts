@@ -17,10 +17,10 @@ export interface MenuInterface {
   path?: string
   link?: string
   separator?: boolean
-  subMenu?: Array<SubMenuInterface>
+  submenu?: Array<SubmenuInterface>
 }
 
-export interface SubMenuInterface {
+export interface SubmenuInterface {
   name: string
   meta: string
   active?: boolean
@@ -60,7 +60,7 @@ const menuTemplate = {
     {
       name: 'Element',
       meta: 'element',
-      subMenu: [
+      submenu: [
         {
           name: 'Avatar',
           meta: 'avatar',
@@ -136,7 +136,7 @@ const menuTemplate = {
     {
       name: 'Component',
       meta: 'component',
-      subMenu: [
+      submenu: [
         {
           name: 'Accordion',
           meta: 'accordion',
@@ -209,7 +209,7 @@ const menuTemplate = {
       name: 'Form',
       meta: 'form',
       separator: true,
-      subMenu: [
+      submenu: [
         {
           name: 'Form Layout 1',
           meta: 'accordion',

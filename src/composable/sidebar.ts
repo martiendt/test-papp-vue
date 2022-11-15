@@ -1,5 +1,5 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
-import type { ShortcutInterface, MenuInterface, SubMenuInterface } from '@/stores/sidebar-menu'
+import type { ShortcutInterface, MenuInterface, SubmenuInterface } from '@/stores/sidebar-menu'
 import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useSidebarStore } from '@/stores/sidebar'
@@ -48,7 +48,7 @@ export function useSidebar() {
   }
 
   const onClickMenu = (menu: MenuInterface) => {
-    if (menu.subMenu === undefined) {
+    if (menu.submenu === undefined) {
       menu.active = true
     } else {
       menu.active = !menu.active
@@ -69,13 +69,13 @@ export function useSidebar() {
 
   const setActiveMenu = (items: MenuInterface[], route: RouteLocationNormalizedLoaded): MenuInterface | undefined => {
     for (const item of items) {
-      if (item.subMenu === undefined) {
+      if (item.submenu === undefined) {
         item.active = false
       }
 
-      if (item.subMenu !== undefined && setActiveSubMenu(item.subMenu, route)) {
+      if (item.submenu !== undefined && setActiveSubmenu(item.submenu, route)) {
         item.active = true
-        return item.subMenu !== undefined ? item : undefined
+        return item.submenu !== undefined ? item : undefined
       }
 
       if (item.meta === route.meta.menu) {
@@ -85,13 +85,13 @@ export function useSidebar() {
     }
   }
 
-  const setActiveSubMenu = (
-    items: SubMenuInterface[],
+  const setActiveSubmenu = (
+    items: SubmenuInterface[],
     route: RouteLocationNormalizedLoaded
-  ): SubMenuInterface | undefined => {
+  ): SubmenuInterface | undefined => {
     for (const item of items) {
       item.active = false
-      if (item.meta === route.meta.subMenu) {
+      if (item.meta === route.meta.submenu) {
         item.active = true
         return item
       }

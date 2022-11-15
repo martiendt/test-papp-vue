@@ -45,7 +45,7 @@
             <li v-for="menu in activeShortcut.menu" :key="menu.name">
               <!-- Sub Menu Wrapper -->
               <button
-                v-if="menu.subMenu"
+                v-if="menu.submenu"
                 class="menu-link-button"
                 :class="{
                   '!text-white': route.meta.menu === menu.meta,
@@ -55,7 +55,7 @@
               >
                 {{ menu.name }}
                 <fa-icon
-                  v-if="menu.subMenu"
+                  v-if="menu.submenu"
                   icon="fa-solid fa-angle-right "
                   :class="{ 'rotate-90 transition transform-gpu ': menu.active }"
                 />
@@ -82,7 +82,7 @@
                 {{ menu.name }}
                 <fa-icon icon="fa-solid fa-up-right-from-square" />
               </a>
-              <div v-if="menu.subMenu && menu.subMenu.length > 0">
+              <div v-if="menu.submenu && menu.submenu.length > 0">
                 <ul
                   class="transition-all transform-gpu"
                   :class="{
@@ -90,21 +90,21 @@
                     'max-h-0 overflow-hidden': !menu.active,
                   }"
                 >
-                  <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
-                    <router-link :to="subMenu.path as string" class="submenu-link">
+                  <li v-for="submenu in menu.submenu" :key="submenu.name" class="overflow-hidden">
+                    <router-link :to="submenu.path as string" class="submenu-link">
                       <div class="flex items-center space-x-2">
-                        <div class="bullet-list" :class="{ 'bg-white': route.meta.subMenu === subMenu.meta }"></div>
+                        <div class="bullet-list" :class="{ 'bg-white': route.meta.submenu === submenu.meta }"></div>
                         <span
                           :class="{
-                            '!text-white': route.meta.subMenu === subMenu.meta,
-                            '!text-slate-100/80': route.meta.subMenu !== subMenu.meta,
+                            '!text-white': route.meta.submenu === submenu.meta,
+                            '!text-slate-100/80': route.meta.submenu !== submenu.meta,
                           }"
                         >
-                          {{ subMenu.name }}
+                          {{ submenu.name }}
                         </span>
                       </div>
                     </router-link>
-                    <div v-if="subMenu.separator" class="submenu-separator"></div>
+                    <div v-if="submenu.separator" class="submenu-separator"></div>
                   </li>
                 </ul>
               </div>

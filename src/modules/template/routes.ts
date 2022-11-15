@@ -19,7 +19,7 @@ export const routes = {
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'badge',
+            submenu: 'badge',
           },
         },
         {
@@ -28,7 +28,7 @@ export const routes = {
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'button',
+            submenu: 'button',
           },
         },
         {
@@ -37,7 +37,7 @@ export const routes = {
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'breadcrumb',
+            submenu: 'breadcrumb',
           },
         },
       ],
@@ -56,7 +56,7 @@ export const routes = {
           meta: {
             shortcut: 'template',
             menu: 'component',
-            subMenu: 'accordion',
+            submenu: 'accordion',
           },
         },
       ],
