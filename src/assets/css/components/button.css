@@ -1,0 +1,11 @@
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-lg
+     text-center tracking-wide outline-none transition-all duration-200
+     focus:outline-none disabled:pointer-events-none;
+  }
+
+  .btn-md {
+    @apply px-5 py-2
+  }
+}

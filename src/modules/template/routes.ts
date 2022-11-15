@@ -32,12 +32,12 @@ export const routes = {
           },
         },
         {
-          path: 'button/create',
-          component: () => import('./views/element/button-create.vue'),
+          path: 'breadcrumb',
+          component: () => import('./views/element/breadcrumb.vue'),
           meta: {
             shortcut: 'template',
             menu: 'element',
-            subMenu: 'button',
+            subMenu: 'breadcrumb',
           },
         },
       ],
@@ -58,6 +58,23 @@ export const routes = {
             menu: 'component',
             subMenu: 'accordion',
           },
+        },
+      ],
+    },
+  ],
+}
+
+export const pageRoutes = {
+  path: '/page',
+  component: () => import('@/layouts/full-layout.vue'),
+  children: [
+    {
+      path: '',
+      component: () => import('./module-index.vue'),
+      children: [
+        {
+          path: 'signin',
+          component: () => import('./views/page/signin.vue'),
         },
       ],
     },

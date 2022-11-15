@@ -6,4 +6,6 @@
 @import "./component-layouts/sidebar-toggle.css";
 
 /* Components */
+@import "./components/button.css";
+@import "./components/card.css";
 @import "./components/preloader.css";

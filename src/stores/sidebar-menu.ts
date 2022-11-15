@@ -7,6 +7,7 @@ export interface ShortcutInterface {
   menu: Array<MenuInterface>
   active?: boolean
   path?: string
+  link?: string
 }
 
 export interface MenuInterface {
@@ -14,6 +15,7 @@ export interface MenuInterface {
   meta: string
   active?: boolean
   path?: string
+  link?: string
   separator?: boolean
   subMenu?: Array<SubMenuInterface>
 }
@@ -21,8 +23,9 @@ export interface MenuInterface {
 export interface SubMenuInterface {
   name: string
   meta: string
-  path: string
   active?: boolean
+  path?: string
+  link?: string
   separator?: boolean
 }
 
@@ -86,7 +89,7 @@ const menuTemplate = {
         {
           name: 'Breadcrumb',
           meta: 'breadcrumb',
-          path: '/template/element/badge',
+          path: '/template/element/breadcrumb',
         },
         {
           name: 'Card',
@@ -205,6 +208,7 @@ const menuTemplate = {
     {
       name: 'Form',
       meta: 'form',
+      separator: true,
       subMenu: [
         {
           name: 'Form Layout 1',
@@ -298,6 +302,26 @@ const menuTemplate = {
           path: '/template/component/accordion',
         },
       ],
+    },
+    {
+      name: 'tailwindcss.com',
+      meta: 'tailwindcss',
+      link: 'https://tailwindcss.com/',
+    },
+    {
+      name: 'fontawesome.com',
+      meta: 'fontawesome',
+      link: 'https://fontawesome.com/search',
+    },
+    {
+      name: 'vuejs.org',
+      meta: 'vuejs',
+      link: 'https://vuejs.org/',
+    },
+    {
+      name: 'vitejs.dev',
+      meta: 'vite',
+      link: 'https://vitejs.dev/',
     },
   ],
 }

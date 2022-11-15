@@ -20,6 +20,11 @@
             <fa-icon :icon="shortcut.icon + ' w-6 h-6'" />
           </button>
         </div>
+        <div class="my-2">
+          <button class="sidebar-shortcut-link text-red-200">
+            <fa-icon icon="fa-solid fa-power-off w-6 h-6" />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -55,9 +60,9 @@
                   :class="{ 'rotate-90 transition transform-gpu ': menu.active }"
                 />
               </button>
-              <!-- MENU -->
+              <!-- Internal Menu -->
               <router-link
-                v-else
+                v-if="menu.path"
                 :to="menu.path as string"
                 class="menu-link-button"
                 :class="{
@@ -67,6 +72,16 @@
               >
                 {{ menu.name }}
               </router-link>
+              <!-- External Menu -->
+              <a
+                v-if="menu.link"
+                :href="menu.link as string"
+                target="_blank"
+                class="menu-link-button !text-slate-200/80"
+              >
+                {{ menu.name }}
+                <fa-icon icon="fa-solid fa-up-right-from-square" />
+              </a>
               <div v-if="menu.subMenu && menu.subMenu.length > 0">
                 <ul
                   class="transition-all transform-gpu"
@@ -76,7 +91,7 @@
                   }"
                 >
                   <li v-for="subMenu in menu.subMenu" :key="subMenu.name" class="overflow-hidden">
-                    <router-link :to="subMenu.path" class="submenu-link">
+                    <router-link :to="subMenu.path as string" class="submenu-link">
                       <div class="flex items-center space-x-2">
                         <div class="bullet-list" :class="{ 'bg-white': route.meta.subMenu === subMenu.meta }"></div>
                         <span
