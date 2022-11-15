@@ -77,6 +77,15 @@ export const routes = {
             submenu: 'accordion',
           },
         },
+        {
+          path: 'table',
+          component: () => import('./views/component/table.vue'),
+          meta: {
+            shortcut: 'template',
+            menu: 'component',
+            submenu: 'table',
+          },
+        },
       ],
     },
     {
