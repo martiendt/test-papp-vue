@@ -40,6 +40,15 @@ export const routes = {
             submenu: 'breadcrumb',
           },
         },
+        {
+          path: 'typography',
+          component: () => import('./views/element/typography.vue'),
+          meta: {
+            shortcut: 'template',
+            menu: 'element',
+            submenu: 'typography',
+          },
+        },
       ],
     },
     {

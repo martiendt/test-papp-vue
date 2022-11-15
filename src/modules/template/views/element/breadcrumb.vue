@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center py-5 space-y-5 lg:py-6">
-    <div class="flex space-x-10 items-center">
-      <h2 class="text-xl font-medium text-slate-800 dark:text-slate-50 lg:text-2xl">Breadcrumb</h2>
+    <div class="main-content-header">
+      <h2 class="heading2">Breadcrumb</h2>
       <component :is="Breadcrumb" :breadcrumbs="[{ name: 'Template' }, { name: 'Element' }, { name: 'Breadcrumb' }]" />
     </div>
     <div class="space-y-5">

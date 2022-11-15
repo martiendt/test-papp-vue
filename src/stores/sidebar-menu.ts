@@ -131,6 +131,11 @@ const menuTemplate = {
           meta: 'mask',
           path: '/template/element/badge',
         },
+        {
+          name: 'Typography',
+          meta: 'typography',
+          path: '/template/element/typography',
+        },
       ],
     },
     {
