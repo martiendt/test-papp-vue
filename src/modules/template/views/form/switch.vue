@@ -35,7 +35,7 @@
         </label>
       </div>
       <div
-        class="card bg-slate-800 px-2 text-white transition-all transform-gpu"
+        class="card bg-slate-800 dark:bg-slate-700 px-2 text-white transition-all transform-gpu"
         :class="{
           'max-h-[1000px] overflow-auto py-2': isShowBasicSwitchSourceCode,
           'max-h-0 overflow-hidden': !isShowBasicSwitchSourceCode,
@@ -52,7 +52,8 @@ import Breadcrumb from '@/components/breadcrumb.vue'
 import { ref } from 'vue'
 
 const isShowBasicSwitchSourceCode = ref(false)
-const basicSwitchSourceCode = `function a() {
-  return false;
-}`
+const basicSwitchSourceCode = `<label class="inline-flex items-center space-x-2">
+  <input class="form-switch" type="checkbox" />
+  <span>Yellow</span>
+</label>`
 </script>
