@@ -290,7 +290,7 @@ export const routes = {
           component: () => import('./views/form/form-layout-1.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-layout-1',
           },
         },
@@ -299,7 +299,7 @@ export const routes = {
           component: () => import('./views/form/form-layout-2.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-layout-2',
           },
         },
@@ -308,7 +308,7 @@ export const routes = {
           component: () => import('./views/form/form-layout-3.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-layout-3',
           },
         },
@@ -317,7 +317,7 @@ export const routes = {
           component: () => import('./views/form/form-layout-4.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-layout-4',
           },
         },
@@ -326,7 +326,7 @@ export const routes = {
           component: () => import('./views/form/form-layout-5.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-layout-5',
           },
         },
@@ -335,7 +335,7 @@ export const routes = {
           component: () => import('./views/form/checkbox.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'checkbox',
           },
         },
@@ -344,7 +344,7 @@ export const routes = {
           component: () => import('./views/form/datepicker.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'datepicker',
           },
         },
@@ -353,7 +353,7 @@ export const routes = {
           component: () => import('./views/form/input-group.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'input-group',
           },
         },
@@ -362,7 +362,7 @@ export const routes = {
           component: () => import('./views/form/input-mask.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'input-mask',
           },
         },
@@ -371,7 +371,7 @@ export const routes = {
           component: () => import('./views/form/input-text.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'input-text',
           },
         },
@@ -380,7 +380,7 @@ export const routes = {
           component: () => import('./views/form/radio.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'radio',
           },
         },
@@ -389,7 +389,7 @@ export const routes = {
           component: () => import('./views/form/range.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'range',
           },
         },
@@ -398,7 +398,7 @@ export const routes = {
           component: () => import('./views/form/select.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'select',
           },
         },
@@ -407,7 +407,7 @@ export const routes = {
           component: () => import('./views/form/switch.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'switch',
           },
         },
@@ -416,7 +416,7 @@ export const routes = {
           component: () => import('./views/form/text-editor.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'text-editor',
           },
         },
@@ -425,7 +425,7 @@ export const routes = {
           component: () => import('./views/form/textarea.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'textarea',
           },
         },
@@ -434,7 +434,7 @@ export const routes = {
           component: () => import('./views/form/form-upload.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-upload',
           },
         },
@@ -443,7 +443,7 @@ export const routes = {
           component: () => import('./views/form/form-validation.vue'),
           meta: {
             shortcut: 'template',
-            menu: 'component',
+            menu: 'form',
             submenu: 'form-validation',
           },
         },
