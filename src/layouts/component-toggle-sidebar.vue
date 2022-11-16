@@ -4,7 +4,7 @@
       <fa-icon icon="fa-solid fa-bars w-5 h-5"></fa-icon>
     </div>
     <div v-if="sidebarStore.isSidebarOpen">
-      <fa-icon icon="fa-solid fa-xmark w-5 h-5"></fa-icon>
+      <fa-icon icon="fa-solid fa-angle-left w-5 h-5"></fa-icon>
     </div>
   </button>
 </template>
