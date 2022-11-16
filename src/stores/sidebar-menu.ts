@@ -153,34 +153,9 @@ const menuTemplate = {
           path: '/template/component/collapse',
         },
         {
-          name: 'Tab',
-          meta: 'tab',
-          path: '/template/component/tab',
-        },
-        {
           name: 'Dropdown',
-          meta: 'accordion',
-          path: '/template/component/accordion',
-        },
-        {
-          name: 'Popover',
-          meta: 'accordion',
-          path: '/template/component/accordion',
-        },
-        {
-          name: 'Modal',
-          meta: 'modal',
-          path: '/template/component/modal',
-        },
-        {
-          name: 'Steps',
-          meta: 'steps',
-          path: '/template/component/steps',
-        },
-        {
-          name: 'Timeline',
-          meta: 'timeline',
-          path: '/template/component/timeline',
+          meta: 'dropdown',
+          path: '/template/component/dropdown',
         },
         {
           name: 'Menu List',
@@ -188,9 +163,34 @@ const menuTemplate = {
           path: '/template/component/menu-list',
         },
         {
+          name: 'Modal',
+          meta: 'modal',
+          path: '/template/component/modal',
+        },
+        {
           name: 'Notification',
           meta: 'notification',
           path: '/template/component/notification',
+        },
+        {
+          name: 'Popover',
+          meta: 'popover',
+          path: '/template/component/popover',
+        },
+        {
+          name: 'Steps',
+          meta: 'steps',
+          path: '/template/component/steps',
+        },
+        {
+          name: 'Tab',
+          meta: 'tab',
+          path: '/template/component/tab',
+        },
+        {
+          name: 'Timeline',
+          meta: 'timeline',
+          path: '/template/component/timeline',
         },
         {
           name: 'Treeview',
@@ -262,6 +262,11 @@ const menuTemplate = {
           path: '/template/form/checkbox',
         },
         {
+          name: 'Datepicker',
+          meta: 'datepicker',
+          path: '/template/form/datepicker',
+        },
+        {
           name: 'Radio',
           meta: 'radio',
           path: '/template/form/radio',
@@ -277,24 +282,20 @@ const menuTemplate = {
           path: '/template/form/select',
         },
         {
-          name: 'Textarea',
-          meta: 'textarea',
-          path: '/template/form/textarea',
-        },
-        {
           name: 'Range',
           meta: 'range',
           path: '/template/form/range',
         },
         {
-          name: 'Datepicker',
-          meta: 'datepicker',
-          path: '/template/form/datepicker',
+          name: 'Textarea',
+          meta: 'textarea',
+          path: '/template/form/textarea',
         },
         {
           name: 'Text Editor',
           meta: 'text-editor',
           path: '/template/form/text-editor',
+          separator: true,
         },
         {
           name: 'Form Upload',

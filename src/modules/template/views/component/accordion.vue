@@ -2,19 +2,32 @@
   <div class="main-content-container">
     <div class="main-content-header">
       <h2>Accordion</h2>
-      <component :is="Breadcrumb" :breadcrumbs="[{ name: 'Template' }, { name: 'Element' }, { name: 'Typography' }]" />
+      <component :is="Breadcrumb" :breadcrumbs="[{ name: 'template' }, { name: 'component' }, { name: 'accordion' }]" />
     </div>
     <div class="card p-4 space-y-5">
-      <h3>Breadcrumb</h3>
-      <p>
-        Breadcrumb consist of a list of links that help a user visualize a page's location within the hierarchical
-        structure of a website.
-      </p>
-      <div></div>
+      <div class="flex justify-between">
+        <h3>Accordion</h3>
+        <component :is="Switch" v-model="checked" label="code" />
+      </div>
+      <p>...</p>
+      <div
+        class="card bg-slate-800 dark:bg-slate-700 px-2 text-white transition-all transform-gpu"
+        :class="{
+          'max-h-[1000px] overflow-auto py-2': checked,
+          'max-h-0 overflow-hidden': !checked,
+        }"
+      >
+        <div class="text-sm p-1">html</div>
+        <highlightjs autodetect :code="''" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import Breadcrumb from '@/components/breadcrumb.vue'
+import Switch from '@/components/switch.vue'
+
+const checked = ref(false)
 </script>

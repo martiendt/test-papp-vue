@@ -1,12 +1,15 @@
 <template>
   <div class="main-content-container">
     <div class="main-content-header">
-      <h2>Collapse</h2>
-      <component :is="Breadcrumb" :breadcrumbs="[{ name: 'template' }, { name: 'component' }, { name: 'collapse' }]" />
+      <h2>Datepicker</h2>
+      <component
+        :is="Breadcrumb"
+        :breadcrumbs="[{ name: 'template' }, { name: 'component' }, { name: 'datepicker' }]"
+      />
     </div>
     <div class="card p-4 space-y-5">
       <div class="flex justify-between">
-        <h3>Collapse</h3>
+        <h3>Datepicker</h3>
         <component :is="Switch" v-model="checked" label="code" />
       </div>
       <p>...</p>
